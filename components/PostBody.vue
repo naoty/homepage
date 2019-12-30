@@ -21,6 +21,10 @@ section >>> h1 {
   font-size: 1.5rem;
 }
 
+section >>> h2 {
+  font-size: 1.3rem;
+}
+
 section >>> p,
 section >>> table,
 section >>> pre {
