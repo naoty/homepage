@@ -12,8 +12,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
-      <body>{children}</body>
+    <html lang='ja'>
+      <body className='grid grid-cols-layout grid-rows-layout'>
+        {children}
+      </body>
     </html>
   )
 }
