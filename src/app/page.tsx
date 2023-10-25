@@ -1,4 +1,4 @@
-import Content from './content.md'
+import Content from '@/contents/app/page.md'
 
 export default function Home() {
   return (
