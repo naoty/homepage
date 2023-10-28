@@ -1,6 +1,6 @@
 ---
 title: naoty/todoを書き直した
-describe: 自分のためのTODO管理ツールを久しぶりに書き直した話
+description: 自分のためのTODO管理ツールを久しぶりに書き直した話
 time: 2020-05-17 13:15
 tags: ["oss", "lifehack"]
 ---
