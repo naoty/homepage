@@ -9,7 +9,12 @@ export default function Post({ params }: { params: { id: string } }) {
 
   return (
     <main className='col-start-2 row-start-2 container'>
-      <article className='prose' dangerouslySetInnerHTML={{ __html: post.body.html }}>
+      <article className='prose'>
+        <header>
+          <h1>{post.title}</h1>
+          <p>{post.time}</p>
+        </header>
+        <section dangerouslySetInnerHTML={{ __html: post.body.html }}></section>
       </article>
     </main>
   )
