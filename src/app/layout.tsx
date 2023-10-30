@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { inter, notoSansJP, sourceCodePro } from '@/app/fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='ja'>
+    <html lang='ja' className={`${inter.variable} ${notoSansJP.variable} ${sourceCodePro.variable}`}>
       <body className='grid grid-cols-layout grid-rows-layout'>
         {children}
       </body>
