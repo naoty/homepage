@@ -1,3 +1,4 @@
+import Content from '@/components/content'
 import { allPages } from 'contentlayer/generated'
 
 export default function Home() {
@@ -9,8 +10,7 @@ export default function Home() {
 
   return (
     <main className='col-start-2 row-start-2 container'>
-      <article className='prose max-w-none' dangerouslySetInnerHTML={{ __html: page.body.html }}>
-      </article>
+      <Content dangerouslySetInnerHTML={{ __html: page.body.html }}></Content>
     </main>
   )
 }

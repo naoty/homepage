@@ -1,3 +1,4 @@
+import Content from '@/components/content'
 import { allPosts } from 'contentlayer/generated'
 
 export default function Post({ params }: { params: { id: string } }) {
@@ -9,12 +10,16 @@ export default function Post({ params }: { params: { id: string } }) {
 
   return (
     <main className='col-start-2 row-start-2 container'>
-      <article className='prose'>
+      <article>
         <header>
-          <h1>{post.title}</h1>
-          <p>{post.time}</p>
+          <h1 className='text-3xl font-bold mb-4'>
+            {post.title}
+          </h1>
+          <p className='mb-8'>
+            {post.time}
+          </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.body.html }}></section>
+        <Content dangerouslySetInnerHTML={{ __html: post.body.html }}></Content>
       </article>
     </main>
   )

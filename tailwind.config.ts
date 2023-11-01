@@ -21,12 +21,10 @@ const config: Config = {
         'layout': '1fr 40rem 1fr',
       },
       gridTemplateRows: {
-        'layout': '5rem 1fr',
+        'layout': '5rem 1fr 5rem',
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 }
 export default config

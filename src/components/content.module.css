@@ -1,0 +1,57 @@
+.body {
+  *:first-child {
+    margin-top: 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.8;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.8;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+
+  li {
+    font-size: 1rem;
+    line-height: 1.8;
+    list-style: disc;
+    margin-bottom: 0.5rem;
+  }
+
+  pre {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+    background-color: #000;
+    color: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
