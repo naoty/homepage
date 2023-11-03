@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import Content from '@/components/content'
 import { allPages } from 'contentlayer/generated'
 
@@ -6,7 +7,7 @@ export default function Home() {
   const page = allPages.find((page) => page._raw.flattenedPath === 'pages/home')
 
   if (page == null) {
-    return null
+    notFound()
   }
 
   return (
