@@ -1,3 +1,4 @@
+import { format, parseISO } from 'date-fns'
 import Content from '@/components/content'
 import { allPosts } from 'contentlayer/generated'
 
@@ -16,7 +17,7 @@ export default function Post({ params }: { params: { id: string } }) {
             {post.title}
           </h1>
           <p className='mb-8'>
-            {post.time}
+            {format(parseISO(post.time), 'y-MM-dd')}
           </p>
         </header>
         <Content dangerouslySetInnerHTML={{ __html: post.body.html }}></Content>
