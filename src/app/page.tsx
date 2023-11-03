@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Content from '@/components/content'
 import { allPages } from 'contentlayer/generated'
@@ -25,7 +26,7 @@ export default function Home() {
           <span>/</span>
           <a href='https://github.com/naoty' className='underline'>GitHub</a>
           <span>/</span>
-          <a href='' className='underline'>Posts</a>
+          <Link href='/posts' className='underline'>Posts</Link>
         </footer>
       </article>
     </main>

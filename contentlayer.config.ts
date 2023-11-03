@@ -17,6 +17,12 @@ export const Post = defineDocumentType(() => ({
     time: { type: 'date', required: true },
     description: { type: 'string' },
     tags: { type: 'list', of: { type: 'string' }, default: [] }
+  },
+  computedFields: {
+    id: {
+      type: 'string',
+      resolve: (post) => post._raw.flattenedPath.split('/')[1],
+    }
   }
 }))
 
