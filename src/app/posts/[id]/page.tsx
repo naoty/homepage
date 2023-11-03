@@ -16,8 +16,11 @@ export default function Post({ params }: { params: { id: string } }) {
           <h1 className='text-3xl font-bold mb-4'>
             {post.title}
           </h1>
-          <p className='mb-8'>
-            {format(parseISO(post.time), 'y-MM-dd')}
+          <p className='flex gap-2 mb-8'>
+            <span>{format(parseISO(post.time), 'y-MM-dd')}</span>
+            {post.tags.map(tag => (
+              <a className='underline' href=''>#{tag}</a>
+            ))}
           </p>
         </header>
         <Content dangerouslySetInnerHTML={{ __html: post.body.html }}></Content>
