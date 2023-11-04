@@ -7,13 +7,13 @@ tags: ["diary"]
 
 HHKBのキーキャップが売っているとのことで、はじめて遊舎工房に行ってみた。
 
-![](yushakobo.jpg 'はじめての遊舎工房')
+![](/posts/397/yushakobo.jpg 'はじめての遊舎工房')
 
 6000円くらいしたけど、せっかくなので買い替えてみた。
 
-![](before.jpg 'before')
+![](/posts/397/before.jpg 'before')
 
-![](after.jpg 'after')
+![](/posts/397/after.jpg 'after')
 
 * space、enter、escキーが橙色になった。それ以外のキーはほとんど色味は変わってない。
 * キーが見やすくなった。丸みのあるフォントで太字になった。

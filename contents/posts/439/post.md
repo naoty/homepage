@@ -4,7 +4,7 @@ time: 2021-02-09 20:52
 tags: ['book', 'house']
 ---
 
-![](建築知識2017年9月号.jpg '建築知識2017年9月号')
+![](/posts/439/建築知識2017年9月号.jpg '建築知識2017年9月号')
 
 https://www.amazon.co.jp/dp/B072KPNKYS
 

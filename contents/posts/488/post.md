@@ -4,7 +4,7 @@ time: 2022-09-13 22:57
 tags: ['diary']
 ---
 
-![RubyKaigi 2022の看板](./rubykaigi-2022.jpg)
+![RubyKaigi 2022の看板](/posts/488/rubykaigi-2022.jpg)
 
 9/8-10に三重県津市でおこなわれたRubyKaigi 2022に参加してきた。RubyKaigiは2015年（寿司のアイコンのとき）に参加して以来で、地方で開催されるようになってからは初めての参加となった。
 

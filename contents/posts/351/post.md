@@ -8,7 +8,7 @@ tags: ["diary"]
 
 ずっと小型のiPhoneが出るのを待っていたけどまったく出なかったので、iPhone 3GS以来ずっと使っていたiOSからAndroidに移行した。
 
-![](pixel3.jpg 'Pixel 3')
+![](/posts/351/pixel3.jpg 'Pixel 3')
 
 また、これを機に7年ほど契約していたauからLINE mobileに移った。公式には動作確認済み端末には載っていなかったけど、ちゃんと動作した。
 

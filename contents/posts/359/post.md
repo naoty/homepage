@@ -6,7 +6,7 @@ tags: ["unity"]
 
 昨年末にOculus Goを買ってからVRゲームをいくつかやっているんだけど、自分でも作ってみたくなってきたので、UnityでVRゲームを作る勉強を始めた。
 
-![](hello_unity.jpg 'Hello, Unity!')
+![](/posts/359/hello_unity.jpg 'Hello, Unity!')
 
 いまのところ[UnityによるVRアプリケーション開発](https://www.oreilly.co.jp/books/9784873117577/)という本を写経している。この本はOculus Goがまだなかった2016年の本だけど、ちゃんと動作している。
 

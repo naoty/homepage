@@ -16,7 +16,7 @@ tags: ["diary"]
 
 Pixel 3を買ったのが[当時の記事](./351/)によると3年前だったので値段の割には短命だった。
 
-![Pixel 6](./pixel6.jpg "Pixel 6とPopGrip Slide Stretch")
+![Pixel 6](/posts/461/pixel6.jpg "Pixel 6とPopGrip Slide Stretch")
 
 写真のとおり、Pixel 6の裏に[PopGrip Slide Stretch](https://amzn.to/33ai1WN)というスマートフォンホルダーを取り付けてみた。以前は貼り付けるタイプのホルダーを使っていたけど、粘着力が徐々に弱くなって剥がれてしまうのと、ケースに貼り付けるのに抵抗感があったため、取り付けるタイプにしてみた。
 

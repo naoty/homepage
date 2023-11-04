@@ -4,7 +4,7 @@ time: 2022-01-21 22:08
 tags: ["book", "db"]
 ---
 
-![Database Design and Implementation](./database-design-and-implementation.jpg)
+![Database Design and Implementation](/posts/466/database-design-and-implementation.jpg)
 
 https://link.springer.com/book/10.1007/978-3-030-33836-7
 

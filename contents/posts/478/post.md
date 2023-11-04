@@ -4,7 +4,7 @@ time: 2022-05-28 13:37
 tags: ["diary"]
 ---
 
-![route](./route.jpg "my new gear...")
+![route](/posts/478/route.jpg "my new gear...")
 
 2ヶ月くらい前のことなんだけど、自転車を買った。
 

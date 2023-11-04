@@ -7,8 +7,8 @@ tags: ["diary"]
 
 Mistel社の[BAROCCO MD770](https://www.archisite.co.jp/products/mistel/barocco-md770/)という左右分離式のキーボードを買った。
 
-![](box.jpg '箱')
-![](keyboard.png 'MD770')
+![](/posts/398/box.jpg '箱')
+![](/posts/398/keyboard.png 'MD770')
 
 写真が雑すぎる。
 

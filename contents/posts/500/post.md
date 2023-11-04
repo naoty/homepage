@@ -6,7 +6,7 @@ tags: ['diary']
 
 ずっと気になってたKindle Paperwhiteを買ってみた。
 
-!['PDFの技術書を表示するKindle Paperwhite'](./kindle-paperwhite.jpg "PDFの技術書も読める")
+!['PDFの技術書を表示するKindle Paperwhite'](/posts/500/kindle-paperwhite.jpg "PDFの技術書も読める")
 
 今まではAndroidのAdobe AcrobatアプリでPDFの技術書を読んでいたのだけど、集中が切れるとすぐにTwitterを開いてしまい、読書量が十分にとれていなかったのが課題だった。読書専用のデバイスによってこれを解決したいと思い、購入してみた。
 

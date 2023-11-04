@@ -6,7 +6,7 @@ tags: ['diary']
 
 転職を機にPC周りの小物類を買い直した。
 
-![デスク](./desk.jpg)
+![デスク](/posts/493/desk.jpg)
 
 # ノートパソコンスタンド
 https://www.amazon.co.jp/dp/B091GYPQD8
@@ -45,4 +45,4 @@ DELLのディスプレイの[問題](https://www.dell.com/support/kbdoc/ja-jp/00
 
 # PC周りの配線図
 
-![配線図](./wires.png)
+![配線図](/posts/493/wires.png)

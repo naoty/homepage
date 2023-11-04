@@ -6,7 +6,7 @@ tags: ['diary']
 
 [PREDUCTS](https://preducts.jp/)の天板と[FlexiSpotのE7](https://flexispot.jp/e7-set.html)という電動昇降デスクの脚を買った。部屋に合わせて天板は白、脚は黒にしたかったので、セットではなくバラバラに買った。
 
-![デスクとチェア](./preducts-desk.jpg)
+![デスクとチェア](/posts/517/preducts-desk.jpg)
 
 今までは無印のデスクを6年くらい使っていたのだけど、幅120cmの天板は手狭に感じていた。また、ずっと自宅で座りっぱなしで仕事するのは健康にも良くないと思い、電動昇降デスクを買うことにした。
 
