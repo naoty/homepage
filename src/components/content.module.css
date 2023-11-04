@@ -34,11 +34,23 @@
     padding-left: 2rem;
   }
 
+  ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+
   li {
     font-size: 1rem;
     line-height: 1.8;
-    list-style: disc;
     margin-bottom: 0.5rem;
+  }
+
+  ul > li {
+    list-style: disc;
+  }
+
+  ol > li {
+    list-style: decimal;
   }
 
   pre {
@@ -53,5 +65,10 @@
 
   a {
     text-decoration: underline;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
   }
 }
