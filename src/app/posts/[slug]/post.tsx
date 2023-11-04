@@ -14,7 +14,9 @@ export default function Post({ post }: { post: Post }) {
           <p className='flex gap-2 mb-8 font-mono'>
             <span>{format(parseISO(post.time), 'y-MM-dd')}</span>
             {post.tags.map(tag => (
-              <Link href={`/posts/${tag}`} className='underline'>#{tag}</Link>
+              <Link key={tag} href={`/posts/${tag}`} className='underline'>
+                #{tag}
+              </Link>
             ))}
           </p>
         </header>
