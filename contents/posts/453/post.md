@@ -8,7 +8,7 @@ tags: ["design"]
 
 CLIアプリケーションを作るとき、Command、Model、Repositoryの3つの責務を分けて実装している。アプリケーションによってはここに異なる責務を追加している。
 
-![diagram](./diagram.png "責務と依存関係")
+![diagram](/posts/453/diagram.png "責務と依存関係")
 
 # Command
 Commandはシェルとのやり取りを行う。コマンドライン引数、標準入出力、標準エラー出力、終了ステータス、環境変数などを扱う。Rubyで言うと、`ARGV`や`STDIN`、さらに`Kernel#.exit`といったシステムコールはCommandで扱う。
