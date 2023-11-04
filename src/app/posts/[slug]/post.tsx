@@ -1,15 +1,9 @@
-import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
+import { Post } from 'contentlayer/generated'
 import Content from '@/components/content'
-import { allPosts } from 'contentlayer/generated'
 
-export default function Post({ params }: { params: { id: string } }) {
-  const post = allPosts.find((post) => post._raw.flattenedPath === `posts/${params.id}/post`)
-
-  if (post == null) {
-    notFound()
-  }
-
+export default function Post({ post }: { post: Post }) {
   return (
     <main className='col-start-2 row-start-2 container'>
       <article>
@@ -20,7 +14,7 @@ export default function Post({ params }: { params: { id: string } }) {
           <p className='flex gap-2 mb-8 font-mono'>
             <span>{format(parseISO(post.time), 'y-MM-dd')}</span>
             {post.tags.map(tag => (
-              <a className='underline' href=''>#{tag}</a>
+              <Link href={`/posts/${tag}`} className='underline'>#{tag}</Link>
             ))}
           </p>
         </header>
