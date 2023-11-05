@@ -2,6 +2,7 @@ import { allPosts } from "contentlayer/generated"
 import { format, parseISO } from "date-fns"
 import Link from "@/components/link"
 import FilterButton from "@/components/filter-button"
+import Posts from "@/components/posts"
 
 export default function Page() {
   const posts = allPosts.sort((a, b) => a.time > b.time ? -1 : 1)
@@ -24,16 +25,7 @@ export default function Page() {
         </h1>
       </header>
       <section className='col-start-2 row-start-3 container pb-8 border-b'>
-        <ul className='flex flex-col space-y-2'>
-          {posts.map(post => (
-            <li key={post.id} className='flex flex-row space-x-2 items-center'>
-              <span className='font-mono text-sm'>
-                {post.formattedTime}
-              </span>
-              <Link href={`/posts/${post.id}`}>{post.title}</Link>
-            </li>
-          ))}
-        </ul>
+        <Posts posts={posts} />
       </section>
       <nav className='col-start-3 row-start-3 container'>
         <ul className='flex flex-col space-y-2'>
