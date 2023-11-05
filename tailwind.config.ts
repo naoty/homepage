@@ -21,7 +21,7 @@ const config: Config = {
         'layout': '1fr 40rem 1fr',
       },
       gridTemplateRows: {
-        'layout': '5rem 1fr 5rem',
+        'layout': '5rem minmax(0, auto) 1fr minmax(0, auto) 5rem',
       },
     },
   },
