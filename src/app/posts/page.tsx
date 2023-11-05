@@ -1,6 +1,6 @@
-import Link from "next/link"
 import { allPosts } from "contentlayer/generated"
 import { format, parseISO } from "date-fns"
+import Link from "@/components/link"
 
 export default function Page() {
   const sorted = allPosts.sort((a, b) => a.time > b.time ? -1 : 1)
@@ -16,15 +16,13 @@ export default function Page() {
             <span className='font-mono text-sm'>
               {format(parseISO(post.time), 'y-MM-dd')}
             </span>
-            <Link href={`/posts/${post.id}`} className='underline'>
-              {post.title}
-            </Link>
+            <Link href={`/posts/${post.id}`}>{post.title}</Link>
           </li>
         ))}
       </ul>
       <hr className='my-8' />
       <footer className='flex gap-2'>
-        <Link href='/' className='underline'>Top</Link>
+        <Link href='/'>Top</Link>
         <span>/</span>
         <span className='text-slate-500'>Posts</span>
       </footer>

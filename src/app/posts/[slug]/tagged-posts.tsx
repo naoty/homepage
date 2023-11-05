@@ -1,6 +1,6 @@
-import Link from "next/link"
 import { format, parseISO } from "date-fns"
 import { Post } from 'contentlayer/generated'
+import Link from "@/components/link"
 
 export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[] }) {
   const sorted = posts.sort((a, b) => a.time > b.time ? -1 : 1)
@@ -16,17 +16,15 @@ export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[]
             <span className='font-mono text-sm'>
               {format(parseISO(post.time), 'y-MM-dd')}
             </span>
-            <Link href={`/posts/${post.id}`} className='underline'>
-              {post.title}
-            </Link>
+            <Link href={`/posts/${post.id}`}>{post.title}</Link>
           </li>
         ))}
       </ul>
       <hr className='my-8' />
       <footer className='flex gap-2'>
-        <Link href='/' className='underline'>Top</Link>
+        <Link href='/'>Top</Link>
         <span>/</span>
-        <Link href='/posts' className='underline'>Posts</Link>
+        <Link href='/posts'>Posts</Link>
         <span>/</span>
         <span className='text-slate-500'>#{tag}</span>
       </footer>

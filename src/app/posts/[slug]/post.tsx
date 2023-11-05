@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
 import { Post } from 'contentlayer/generated'
 import Content from '@/components/content'
+import Link from '@/components/link'
 
 export default function Post({ post }: { post: Post }) {
   return (
@@ -14,7 +14,7 @@ export default function Post({ post }: { post: Post }) {
           <p className='flex gap-2 mb-8 font-mono'>
             <span>{format(parseISO(post.time), 'y-MM-dd')}</span>
             {post.tags.map(tag => (
-              <Link key={tag} href={`/posts/${tag}`} className='underline'>
+              <Link key={tag} href={`/posts/${tag}`}>
                 #{tag}
               </Link>
             ))}
@@ -23,9 +23,9 @@ export default function Post({ post }: { post: Post }) {
         <Content dangerouslySetInnerHTML={{ __html: post.body.html }}></Content>
         <hr className='my-8' />
         <footer className='flex gap-2'>
-          <Link href='/' className='underline'>Top</Link>
+          <Link href='/'>Top</Link>
           <span>/</span>
-          <Link href='/posts' className='underline'>Posts</Link>
+          <Link href='/posts'>Posts</Link>
           <span>/</span>
           <span className='text-slate-500'>{post.id}</span>
         </footer>

@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Content from '@/components/content'
 import { allPages } from 'contentlayer/generated'
+import Link from '@/components/link'
 
 export default function Home() {
   const page = allPages.find((page) => page._raw.flattenedPath === 'pages/home')
@@ -22,9 +22,13 @@ export default function Home() {
         <Content dangerouslySetInnerHTML={{ __html: page.body.html }}></Content>
         <hr className='my-8' />
         <footer className='flex gap-4'>
-          <a href='https://twitter.com/naoty_k' className='underline'>X</a>
-          <a href='https://github.com/naoty' className='underline'>GitHub</a>
-          <Link href='/posts' className='underline'>Posts</Link>
+          <a href='https://twitter.com/naoty_k' className='underline hover:text-slate-500 transition'>
+            X
+          </a>
+          <a href='https://github.com/naoty' className='underline hover:text-slate-500 transition'>
+            GitHub
+          </a>
+          <Link href='/posts'>Posts</Link>
         </footer>
       </article>
     </main>
