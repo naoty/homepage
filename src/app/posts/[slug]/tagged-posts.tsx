@@ -22,6 +22,14 @@ export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[]
           </li>
         ))}
       </ul>
+      <hr className='my-8' />
+      <footer className='flex gap-2'>
+        <Link href='/' className='underline'>Top</Link>
+        <span>/</span>
+        <Link href='/posts' className='underline'>Posts</Link>
+        <span>/</span>
+        <span className='text-slate-500'>#{tag}</span>
+      </footer>
     </main>
   )
 }

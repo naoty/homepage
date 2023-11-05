@@ -21,11 +21,9 @@ export default function Home() {
         </header>
         <Content dangerouslySetInnerHTML={{ __html: page.body.html }}></Content>
         <hr className='my-8' />
-        <footer className='flex gap-2'>
+        <footer className='flex gap-4'>
           <a href='https://twitter.com/naoty_k' className='underline'>X</a>
-          <span>/</span>
           <a href='https://github.com/naoty' className='underline'>GitHub</a>
-          <span>/</span>
           <Link href='/posts' className='underline'>Posts</Link>
         </footer>
       </article>

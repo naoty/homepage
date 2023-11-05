@@ -22,6 +22,12 @@ export default function Page() {
           </li>
         ))}
       </ul>
+      <hr className='my-8' />
+      <footer className='flex gap-2'>
+        <Link href='/' className='underline'>Top</Link>
+        <span>/</span>
+        <span className='text-slate-500'>Posts</span>
+      </footer>
     </main>
   )
 }

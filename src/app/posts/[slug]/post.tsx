@@ -21,6 +21,14 @@ export default function Post({ post }: { post: Post }) {
           </p>
         </header>
         <Content dangerouslySetInnerHTML={{ __html: post.body.html }}></Content>
+        <hr className='my-8' />
+        <footer className='flex gap-2'>
+          <Link href='/' className='underline'>Top</Link>
+          <span>/</span>
+          <Link href='/posts' className='underline'>Posts</Link>
+          <span>/</span>
+          <span className='text-slate-500'>{post.id}</span>
+        </footer>
       </article>
     </main>
   )
