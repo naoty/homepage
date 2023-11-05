@@ -1,9 +1,21 @@
 import { allPosts } from "contentlayer/generated"
 import { format, parseISO } from "date-fns"
 import Link from "@/components/link"
+import FilterButton from "@/components/filter-button"
 
 export default function Page() {
-  const sorted = allPosts.sort((a, b) => a.time > b.time ? -1 : 1)
+  const posts = allPosts.sort((a, b) => a.time > b.time ? -1 : 1)
+
+  const postCountsAndYear = posts.reduce<[number, number][]>((result, post) => {
+    const year = parseISO(post.time).getFullYear()
+    const index = result.findIndex(entry => entry[0] === year)
+    if (index !== -1) {
+      result[index][1]++
+    } else {
+      result.push([year, 1])
+    }
+    return result
+  }, [])
 
   return (
     <>
@@ -14,7 +26,7 @@ export default function Page() {
       </header>
       <section className='col-start-2 row-start-3 container pb-8 border-b'>
         <ul className='flex flex-col space-y-2'>
-          {sorted.map(post => (
+          {posts.map(post => (
             <li key={post.id} className='flex flex-row space-x-2 items-center'>
               <span className='font-mono text-sm'>
                 {format(parseISO(post.time), 'y-MM-dd')}
@@ -24,6 +36,15 @@ export default function Page() {
           ))}
         </ul>
       </section>
+      <nav className='col-start-3 row-start-3 container'>
+        <ul className='flex flex-col space-y-2'>
+          {postCountsAndYear.map(([year, count]) => (
+            <li key={year}>
+              <FilterButton>{`${year} (${count})`}</FilterButton>
+            </li>
+          ))}
+        </ul>
+      </nav>
       <footer className='col-start-2 row-start-4 flex gap-2 container pt-8'>
         <Link href='/'>Top</Link>
         <span>/</span>
