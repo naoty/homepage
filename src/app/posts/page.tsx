@@ -7,12 +7,11 @@ export default function Page() {
   const posts = allPosts.sort((a, b) => a.time > b.time ? -1 : 1)
 
   const postCountsAndYear = posts.reduce<[number, number][]>((result, post) => {
-    const year = parseISO(post.time).getFullYear()
-    const index = result.findIndex(entry => entry[0] === year)
+    const index = result.findIndex(entry => entry[0] === post.year)
     if (index !== -1) {
       result[index][1]++
     } else {
-      result.push([year, 1])
+      result.push([post.year, 1])
     }
     return result
   }, [])
@@ -29,7 +28,7 @@ export default function Page() {
           {posts.map(post => (
             <li key={post.id} className='flex flex-row space-x-2 items-center'>
               <span className='font-mono text-sm'>
-                {format(parseISO(post.time), 'y-MM-dd')}
+                {post.formattedTime}
               </span>
               <Link href={`/posts/${post.id}`}>{post.title}</Link>
             </li>

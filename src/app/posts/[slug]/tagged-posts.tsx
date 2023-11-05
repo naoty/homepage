@@ -17,7 +17,7 @@ export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[]
           {sorted.map(post => (
             <li key={post.id} className='flex flex-row space-x-2 items-center'>
               <span className='font-mono text-sm'>
-                {format(parseISO(post.time), 'y-MM-dd')}
+                {post.formattedTime}
               </span>
               <Link href={`/posts/${post.id}`}>{post.title}</Link>
             </li>

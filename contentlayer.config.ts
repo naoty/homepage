@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { format, parseISO } from 'date-fns'
 import rehypePrettyCode from 'rehype-pretty-code'
 
 export const Page = defineDocumentType(() => ({
@@ -15,7 +16,7 @@ export const Post = defineDocumentType(() => ({
   filePathPattern: 'posts/**/post.md',
   fields: {
     title: { type: 'string', required: true },
-    time: { type: 'date', required: true },
+    time: { type: 'string', required: true },
     description: { type: 'string' },
     tags: { type: 'list', of: { type: 'string' }, default: [] }
   },
@@ -23,6 +24,14 @@ export const Post = defineDocumentType(() => ({
     id: {
       type: 'string',
       resolve: (post) => post._raw.flattenedPath.split('/')[1],
+    },
+    formattedTime: {
+      type: 'string',
+      resolve: (post) => format(parseISO(post.time), 'y-MM-dd')
+    },
+    year: {
+      type: 'number',
+      resolve: (post) => parseISO(post.time).getFullYear()
     }
   }
 }))
