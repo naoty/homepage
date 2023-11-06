@@ -7,11 +7,11 @@ tags: ["ml"]
 
 [CourseraのMachine Learningを受講しはじめた](https://naoty.github.io/posts/29.html)で書いた通り、5月からCourseraでMachine Learningのコースを受講していたけど、今日無事に11週間にわたるレッスンを終え修了することができた。
 
-![thank you from Andrew Ng](thank_you_from_andrew_ng.png)
+![thank you from Andrew Ng](/posts/337/thank_you_from_andrew_ng.png)
 
 1週間で1 week分のレクチャーと課題をこなしていったけど、無理のないペースでなんとか続けることができた。Togglを使って勉強時間を計測した結果、合計で55時間かけていた。
 
-![toggl](toggl.png)
+![toggl](/posts/337/toggl.png)
 
 勉強中はJupyter NotebookにMarkdownとLaTeXでメモをとったり、計算が必要なときはノート（物理）に数式や行列を書いてみたりしていた。ほぼ毎週あるQuizやプログラミングの課題はちゃんと理解していないと合格できないレベルになっていてかなり苦しめられた。でも、手を動かすことで着実に理解を深めることができた。
 

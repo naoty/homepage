@@ -26,7 +26,7 @@ plt.ylimit(-1, 11)
 plt.show()
 ```
 
-![meshgrid](meshgrid.png)
+![meshgrid](/posts/339/meshgrid.png)
 
 上のように`np.meshgrid()`を使うと、2つの配列`x1`と`x2`からなる平面上にある格子点を取得できる。
 
@@ -39,7 +39,7 @@ x2 = np.arange(0, 10, 0.01)
 # 以下同じ
 ```
 
-![dense meshgrid](dense_meshgrid.png)
+![dense meshgrid](/posts/339/dense_meshgrid.png)
 
 ## 格子点の変換
 ある平面上の「すべての点」を分類器に適用すると、平面上に分類した結果をマッピングできるようになる。
@@ -80,7 +80,7 @@ plt.ylabel('x2')
 plt.show()
 ```
 
-![decision regions](decision_regions.png)
+![decision regions](/posts/339/decision_regions.png)
 
 _（上図は適当な関数を適用しただけです）_
 
