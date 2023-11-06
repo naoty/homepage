@@ -31,7 +31,9 @@ export default function Page() {
         <ul className='flex flex-col space-y-2'>
           {postCountsAndYear.map(([year, count]) => (
             <li key={year}>
-              <FilterButton>{`${year} (${count})`}</FilterButton>
+              <FilterButton href={`/posts?year=${year}`}>
+                {`${year} (${count})`}
+              </FilterButton>
             </li>
           ))}
         </ul>
