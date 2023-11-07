@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation"
 import { Post } from "contentlayer/generated"
+import { roboto } from '@/app/fonts'
 import Link from "@/components/link"
 import FilterButton from "@/components/filter-button"
 
@@ -22,14 +23,16 @@ export default function Posts({ posts, postCountsWithYear }: Props) {
   
   return (
     <>
-      <section className='col-start-2 row-start-3 container pb-8 border-b'>
+      <section className='col-start-2 row-start-3 container pr-4 pb-8 border-b'>
         <ul className='flex flex-col space-y-2'>
           {filtered.map(post => (
             <li key={post.id} className='flex flex-row space-x-2 items-center'>
-              <span className='font-mono text-sm'>
+              <span className={`text-sm leading-[21px] ${roboto.className}`}>
                 {post.formattedTime}
               </span>
-              <Link href={`/posts/${post.id}`}>{post.title}</Link>
+              <Link href={`/posts/${post.id}`} className='flex-1'>
+                {post.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -43,6 +46,7 @@ export default function Posts({ posts, postCountsWithYear }: Props) {
                 <FilterButton
                   href={year === yearParam ? `/posts` : `/posts?year=${year}`}
                   active={year === yearParam}
+                  className={`${roboto.className}`}
                 >
                   {`${year} (${count})`}
                 </FilterButton>

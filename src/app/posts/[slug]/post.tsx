@@ -10,7 +10,7 @@ export default function Post({ post }: { post: Post }) {
         <h1 className='text-3xl font-bold mb-4'>
           {post.title}
         </h1>
-        <p className='flex gap-2 mb-8 font-mono'>
+        <p className='flex gap-2 mb-8 text-neutral-500'>
           <span>{post.formattedTime}</span>
           {post.tags.map(tag => (
             <Link key={tag} href={`/posts/${tag}`}>
