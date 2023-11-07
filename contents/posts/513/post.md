@@ -23,7 +23,7 @@ final result = parseFile(
 # ASTを表すクラス群
 `result.unit`は`Directive`のリストと`Declaration`のリストから成る。`Directive`や`Declaration`は以下のような継承ツリーの一部に含まれていて、特に`Directive`のサブクラスとしては`ImportDirective`や`ExportDirective`が存在する。
 
-![Node](./nodes.png)
+![Node](/posts/513/nodes.png)
 
 # AstVisitor
 ASTのノードの親クラスにあたる`AstNode`には`visitChildren`というメソッドが用意されている。`AstVisitor`型のvisitorを引数に渡すと、ASTのnodeの種類に対応したvisitorのメソッドが呼び出されるようになっている。`AstVisitor`は抽象型で、これを実装したクラスがいくつか用意されている。
