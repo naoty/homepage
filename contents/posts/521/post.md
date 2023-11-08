@@ -8,7 +8,7 @@ Windowsを久々に使い始めて一番戸惑ったのがキーマッピング�
 
 # Keyboard Manager
 
-![](./keyboard-manager.png)
+![](/posts/521/keyboard-manager.png)
 
 Keyboard ManagerはPowerToysというWindows謹製のユーティリティアプリに同梱されているキーマッピングアプリで、シンプルなマッピングならこれで実現できる。
 

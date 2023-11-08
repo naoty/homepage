@@ -12,6 +12,6 @@ tags: ['diary']
 
 PDFを読めるのかが懸念だったけど、MacとKindle PaperwhiteをUSBで接続すると、Finderにデバイスとして表示され、簡単にPC上のPDFを転送できたのでまったく問題なかった。
 
-!["Finder上に表示されたKindle"](./kindle-on-finder.png "Finder上にKindleが表示される")
+!["Finder上に表示されたKindle"](/posts/500/kindle-on-finder.png "Finder上にKindleが表示される")
 
 今のところ、読みたいマンガを読み尽くしておいたおかげか、技術書をかなり集中して読めており、読書量がかなり増えたと感じている。ディスプレイの特性上、スマホと比べるとレンダリングがモッサリとしているけど、読書に支障をきたすレベルにはなく、むしろ読書以外の余計な操作をする気力を削いでいるとも言えそう。

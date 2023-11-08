@@ -6,7 +6,7 @@ tags: ['oss', 'lifehack']
 
 自分専用のTODO管理ツールである[naoty/todo](https://github.com/naoty/todo)にタグ機能を追加した。
 
-![タグつきTODO](./tagged-todos.png "個人開発のTODO")
+![タグつきTODO](/posts/486/tagged-todos.png "個人開発のTODO")
 
 `#naoty/todo`とついているのがタグで、以下のコマンドで複数つけることができる。
 

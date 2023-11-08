@@ -47,4 +47,4 @@ Temurinが使われるようになった。
 
 IntelliJ IDEAで利用する場合にはプロジェクト設定からSDKをTemurinに設定する。
 
-![IntelliJ IDEA](./intellij-idea.png "プロジェクト設定")
+![IntelliJ IDEA](/posts/469/intellij-idea.png "プロジェクト設定")
