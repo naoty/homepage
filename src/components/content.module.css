@@ -1,9 +1,9 @@
 .body {
-  *:first-child {
+  > *:first-child {
     margin-top: 0;
   }
 
-  *:last-child {
+  > *:last-child {
     margin-bottom: 0;
   }
 
@@ -63,8 +63,22 @@
     margin-bottom: 1rem;
     padding: 1rem;
     overflow-x: auto;
-    background-color: #000;
-    color: #fff;
+  }
+
+  table {
+    margin: 2rem auto;
+    border: 1px solid #737373;
+  }
+
+  th {
+    padding: 0.5rem;
+    border: 1px solid #737373;
+    font-weight: bold;
+  }
+
+  td {
+    padding: 0.5rem;
+    border: 1px solid #737373;
   }
 
   a {
