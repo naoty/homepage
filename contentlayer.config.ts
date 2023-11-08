@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import { format, parseISO } from 'date-fns'
+import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
 
 export const Page = defineDocumentType(() => ({
@@ -40,6 +41,7 @@ export default makeSource({
   contentDirPath: './contents',
   documentTypes: [Page, Post],
   markdown: {
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypePrettyCode],
   },
 })
