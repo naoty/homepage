@@ -2,11 +2,6 @@ import type { Metadata } from 'next'
 import { inter, notoSansJP, sourceCodePro } from '@/app/fonts'
 import './globals.css'
 
-export const metadata: Metadata = {
-  title: 'Naoto Kaneko',
-  description: 'Naoto Kanekoのホームページです',
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -19,4 +14,12 @@ export default function RootLayout({
       </body>
     </html>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'Naoto Kaneko',
+  description: 'Naoto Kanekoのホームページです',
+  authors: [{ name: 'Naoto Kaneko', url: 'https://naoty.dev' }],
+  generator: 'Next.js',
+  metadataBase: new URL('https://naoty.dev'),
 }

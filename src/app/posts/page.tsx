@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { allPosts } from "contentlayer/generated"
 import Posts from '@/app/posts/posts'
 import Link from "@/components/link"
@@ -30,4 +31,9 @@ export default function Page() {
       </footer>
     </>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'Posts',
+  description: 'Naoto Kanekoが過去に書いた記事の一覧ページです。',
 }
