@@ -18,8 +18,8 @@ export default function Page() {
 
   return (
     <>
-      <header className='col-start-2 row-start-2 container'>
-        <h1 className='text-3xl font-bold mb-4 md:mb-8'>
+      <header className='container col-start-1 col-span3 row-start-1 md:col-span-1 md:col-start-2 md:row-start-2 max-md:fixed max-md:bg-neutral-50/80 max-md:backdrop-blur-sm'>
+        <h1 className='text-3xl font-bold mb-4 max-md:px-4 max-md:pt-4 md:mb-8'>
           Posts
         </h1>
       </header>
