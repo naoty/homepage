@@ -18,10 +18,12 @@ const config: Config = {
         mono: ['var(--font-source-code-pro)'],
       },
       gridTemplateColumns: {
-        'layout': '1fr 40rem 1fr',
+        'mobile': '1rem minmax(0, auto) 1rem',
+        'desktop': '1fr 40rem 1fr',
       },
       gridTemplateRows: {
-        'layout': '5rem minmax(0, auto) 1fr minmax(0, auto) 5rem',
+        'mobile': '1rem minmax(0, auto) 1fr minmax(0, auto) 1rem',
+        'desktop': '5rem minmax(0, auto) 1fr minmax(0, auto) 5rem',
       },
     },
   },
