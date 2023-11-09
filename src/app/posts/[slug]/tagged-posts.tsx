@@ -8,11 +8,11 @@ export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[]
   return (
     <>
       <header className='col-start-2 row-start-2 container'>
-        <h1 className='text-3xl font-bold mb-8'>
+        <h1 className='text-3xl font-bold mb-4 md:mb-8'>
           #{tag}
         </h1>
       </header>
-      <section className='col-start-2 row-start-3 container pb-8 border-b'>
+      <section className='col-start-2 row-start-3 container pb-4 md:pb-8'>
         <ul className='flex flex-col space-y-2'>
           {sorted.map(post => (
             <li key={post.id} className='flex flex-row space-x-2 items-center'>
@@ -24,7 +24,7 @@ export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[]
           ))}
         </ul>
       </section>
-      <footer className='col-start-2 row-start-4 flex gap-2 container pt-8'>
+      <footer className='col-start-2 row-start-4 flex gap-2 container border-t pt-4 md:pt-8'>
         <Link href='/'>Top</Link>
         <span>/</span>
         <Link href='/posts'>Posts</Link>

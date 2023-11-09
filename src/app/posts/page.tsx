@@ -19,12 +19,12 @@ export default function Page() {
   return (
     <>
       <header className='col-start-2 row-start-2 container'>
-        <h1 className='text-3xl font-bold mb-8'>
+        <h1 className='text-3xl font-bold mb-4 md:mb-8'>
           Posts
         </h1>
       </header>
       <Posts posts={posts} postCountsWithYear={postCountsWithYear} />
-      <footer className='col-start-2 row-start-4 flex gap-2 container pt-8'>
+      <footer className='col-start-2 row-start-4 flex gap-2 container border-t pt-4 md:pt-8'>
         <Link href='/'>Top</Link>
         <span>/</span>
         <span className='text-slate-500'>Posts</span>
