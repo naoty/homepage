@@ -37,7 +37,7 @@ export default function Posts({ posts, postCountsWithYear }: Props) {
           ))}
         </ul>
       </section>
-      <nav className='col-start-3 row-start-3 container'>
+      <nav className='max-md:hidden md:col-start-3 md:row-start-3 container'>
         <ul className='flex flex-col space-y-2'>
           {postCountsWithYear.map(([year, count]) => {
             const yearParam = Number(searchParams.get('year'))
