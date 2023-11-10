@@ -22,4 +22,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Naoto Kaneko', url: 'https://naoty.dev' }],
   generator: 'Next.js',
   metadataBase: new URL('https://naoty.dev'),
+  alternates: {
+    types: {
+      'application/rss+xml': '/posts/feed.xml',
+    },
+  },
 }
