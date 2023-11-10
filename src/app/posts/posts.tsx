@@ -23,7 +23,7 @@ export default function Posts({ posts, postCountsWithYear }: Props) {
   
   return (
     <>
-      <section className='col-start-2 row-start-3 container pb-4 max-md:pt-16 md:pb-8 md:pr-4'>
+      <section className='col-start-2 row-start-3 container pb-4 max-md:pt-12 md:pb-8 md:pr-4'>
         <ul className='flex flex-col space-y-2'>
           {filtered.map(post => (
             <li key={post.id} className='flex flex-row space-x-2 items-center'>
