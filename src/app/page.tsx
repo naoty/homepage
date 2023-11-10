@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Content from '@/components/content'
 import { allPages } from 'contentlayer/generated'
+import Content from '@/components/content'
 import Link from '@/components/link'
 
 export default function Home() {

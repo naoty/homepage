@@ -28,6 +28,9 @@ export default function Page() {
         <Link href='/'>Top</Link>
         <span>/</span>
         <span className='text-slate-500'>Posts</span>
+        <a href='/posts/feed.xml' className='ml-auto underline hover:text-slate-500 transition'>
+          RSS
+        </a>
       </footer>
     </>
   )

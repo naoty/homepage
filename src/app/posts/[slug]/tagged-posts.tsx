@@ -30,6 +30,9 @@ export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[]
         <Link href='/posts'>Posts</Link>
         <span>/</span>
         <span className='text-slate-500'>#{tag}</span>
+        <a href='/posts/feed.xml' className='ml-auto underline hover:text-slate-500 transition'>
+          RSS
+        </a>
       </footer>
     </>
   )
