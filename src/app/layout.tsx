@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ja' className={`${inter.variable} ${notoSansJP.variable} ${sourceCodePro.variable}`}>
-      <body className='relative grid grid-cols-mobile md:grid-cols-desktop grid-rows-mobile md:grid-rows-desktop'>
+      <body className='text-stone-800 relative grid grid-cols-mobile md:grid-cols-desktop grid-rows-mobile md:grid-rows-desktop'>
         {children}
       </body>
     </html>
