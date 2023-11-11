@@ -27,4 +27,7 @@ export const metadata: Metadata = {
       'application/rss+xml': '/posts/feed.xml',
     },
   },
+  twitter: {
+    card: 'summary',
+  },
 }
