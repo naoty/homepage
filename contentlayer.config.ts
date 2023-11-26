@@ -2,7 +2,6 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import { format, parseISO } from 'date-fns'
 import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
-import rehypeMermaid from 'rehype-mermaid'
 
 export const Page = defineDocumentType(() => ({
   name: 'Page',
@@ -43,9 +42,6 @@ export default makeSource({
   documentTypes: [Page, Post],
   markdown: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [
-      rehypeMermaid as any,
-      rehypePrettyCode,
-    ],
+    rehypePlugins: [rehypePrettyCode],
   },
 })
