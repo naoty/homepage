@@ -14,7 +14,8 @@ export const Page = defineDocumentType(() => ({
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: 'posts/**/post.md',
+  filePathPattern: 'posts/**/post.md*',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     time: { type: 'string', required: true },
@@ -40,7 +41,7 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: './contents',
   documentTypes: [Page, Post],
-  markdown: {
+  mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypePrettyCode],
   },

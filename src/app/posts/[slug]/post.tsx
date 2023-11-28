@@ -1,9 +1,11 @@
-import { format, parseISO } from 'date-fns'
 import { Post } from 'contentlayer/generated'
+import { useMDXComponent } from 'next-contentlayer/hooks'
 import Content from '@/components/content'
 import Link from '@/components/link'
 
 export default function Post({ post }: { post: Post }) {
+  const MDXContent = useMDXComponent(post.body.code)
+
   return (
     <>
       <header className='col-start-2 row-start-2 container'>
@@ -19,10 +21,9 @@ export default function Post({ post }: { post: Post }) {
           ))}
         </p>
       </header>
-      <Content
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-        className='col-start-2 row-start-3 container pb-4 md:pb-8'
-      />
+      <Content className='col-start-2 row-start-3 container pb-4 md:pb-8'>
+        <MDXContent />
+      </Content>
       <footer className='col-start-2 row-start-4 flex gap-2 container border-t pt-4 md:pt-8'>
         <Link href='/'>Top</Link>
         <span>/</span>
