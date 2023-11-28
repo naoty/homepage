@@ -1,0 +1,33 @@
+---
+title: 棋譜をブログに埋め込めるようになった
+time: 2023-11-28 22:34
+tags: ['meta', 'shogi', 'oss']
+---
+
+[naoty/kifu-player](https://github.com/naoty/kifu-player)というReactコンポーネントライブラリを開発し、MDX形式のブログ記事に将棋の棋譜プレイヤーを埋め込めるようにした。ちなみに、この棋譜は先手番で自分が快勝したときのもの。
+
+<KifuPlayer sfen='position sfen lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b - 1 moves 5g5f 5c5d 2h5h 8b5b 7g7f 3c3d 5i4h 5a6b 4h3h 6b7b 3h2h 7b8b 3i3h 4a3b 9g9f 9c9d 6g6f 3a4b 7i6h 4b5c 6h5g 1c1d 8h7g 1d1e 5g4f 5c4d 6f6e 7a7b 8g8f 8c8d 5h8h 7b8c 6i5h 6a7b 8f8e 8d8e 8h8e P*8d 8e8h 5d5e 5f5e 4d5e 4f5e 5b5e 7g5e 2b5e 8h9h B*8g R*5a 8g9h+ 5a5e+ 9h9i 5e5a R*3a P*5b P*5g 5h4h 1e1f 1g1f 9i3c 5a3a 3b3a B*5c 3a4a R*6a 4a5b 5c2f+ S*3e 2f3e 3d3e 6a2a+ 5b6b N*7e 8c7d P*8c 8b9b S*8b L*5a 2a3a B*9i 3a3c 9i3c+ S*9c 8a9c B*8a' />
+
+この棋譜プレイヤーはMarkdown中でこのように記述されている。
+
+```jsx
+<KifuPlayer sfen='position sfen lnsgkgsnl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LNSGKGSNL b - 1 moves 5g5f 5c5d 2h5h 8b5b 7g7f 3c3d 5i4h 5a6b 4h3h 6b7b 3h2h 7b8b 3i3h 4a3b 9g9f 9c9d 6g6f 3a4b 7i6h 4b5c 6h5g 1c1d 8h7g 1d1e 5g4f 5c4d 6f6e 7a7b 8g8f 8c8d 5h8h 7b8c 6i5h 6a7b 8f8e 8d8e 8h8e P*8d 8e8h 5d5e 5f5e 4d5e 4f5e 5b5e 7g5e 2b5e 8h9h B*8g R*5a 8g9h+ 5a5e+ 9h9i 5e5a R*3a P*5b P*5g 5h4h 1e1f 1g1f 9i3c 5a3a 3b3a B*5c 3a4a R*6a 4a5b 5c2f+ S*3e 2f3e 3d3e 6a2a+ 5b6b N*7e 8c7d P*8c 8b9b S*8b L*5a 2a3a B*9i 3a3c 9i3c+ S*9c 8a9c B*8a' />
+```
+
+# MDX
+まず、このブログ記事はMDXという形式で記述している。MDXというのは、Markdown版のJSXのことで、Markdown中にReactコンポーネントを記述できる。そのため、Markdownだけでは実現できなかった動的なコンテンツや複雑なコンテンツを表現でき、ブログの可能性を大きく広げてくれると感じている。
+
+今回はMDXで遊んでみようと思い、将棋の棋譜をボタンで再生できるプレイヤーをReactコンポーネントとして実装し、MDXで記述することにした。
+
+# naoty/kifu-player
+せっかくなので、棋譜プレイヤーについても解説したい。
+
+各局面を`Position`と呼んでいるのだけど、その`Position`のリストをpropsで渡した棋譜データから生成しており、内部的には何手目の局面を表示するかだけ状態として保持し、進むボタンと戻るボタンでその状態を更新している。
+
+棋譜を表すデータ形式にはいくつかあるのだけど、最初はSFEN形式からサポートするようにした。理由としては、比較的短い文字列で表現できるためにpropsとして渡しやすく、また特定の局面とそこからの数手だけを表したい場合にも使いやすかったので採用した。
+
+また、Reactコンポーネントをライブラリとして実装して公開するのは今回はじめてだったけど、viteやvitestを利用してスムーズに開発やパッケージの公開ができた。
+
+---
+
+棋譜プレイヤーはまだまだ細かい部分で雑な作りになっていたり、UI面の改善できるポイントがあるため、もう少し改良を続けていく。今後は、この棋譜プレイヤーコンポーネントを使って、将棋のブログ記事を充実させて自分の棋力向上につなげていきたい。
