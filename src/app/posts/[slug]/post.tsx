@@ -1,7 +1,13 @@
-import { Post } from 'contentlayer/generated'
+'use client'
+
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import type { MDXComponents } from 'mdx/types'
+import { Post } from 'contentlayer/generated'
 import Content from '@/components/content'
 import Link from '@/components/link'
+import { KifuPlayer } from '@naoty/kifu-player'
+
+import '@naoty/kifu-player/dist/style.css'
 
 export default function Post({ post }: { post: Post }) {
   const MDXContent = useMDXComponent(post.body.code)
@@ -22,7 +28,7 @@ export default function Post({ post }: { post: Post }) {
         </p>
       </header>
       <Content className='col-start-2 row-start-3 container pb-4 md:pb-8'>
-        <MDXContent />
+        <MDXContent components={mdxComponents} />
       </Content>
       <footer className='col-start-2 row-start-4 flex gap-2 container border-t pt-4 md:pt-8'>
         <Link href='/'>Top</Link>
@@ -36,4 +42,9 @@ export default function Post({ post }: { post: Post }) {
       </footer>
     </>
   )
+}
+
+const mdxComponents: MDXComponents = {
+  MyComponent: () => <div>Hello World!</div>,
+  KifuPlayer: ({ sfen }: { sfen: string }) => <KifuPlayer sfen={sfen} />
 }
