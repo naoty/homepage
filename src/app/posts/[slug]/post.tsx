@@ -2,10 +2,10 @@
 
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import type { MDXComponents } from 'mdx/types'
+import { KifuPlayer } from '@naoty/kifu-player'
 import { Post } from 'contentlayer/generated'
 import Content from '@/components/content'
 import Link from '@/components/link'
-import { KifuPlayer } from '@naoty/kifu-player'
 
 import '@naoty/kifu-player/dist/style.css'
 
