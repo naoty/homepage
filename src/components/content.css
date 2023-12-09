@@ -103,13 +103,8 @@
 .kifu-player {
   margin: 2rem 0;
 
-  table {
-    margin: 0;
-    border: none;
-  }
-
-  td {
-    padding: 0;
+  .board {
+    margin-bottom: 0;
   }
 
   .hand {
@@ -120,12 +115,15 @@
     margin-bottom: 0;
   }
 
+  .square {
+    margin-bottom: 0;
+  }
+
   .column-number {
-    border: none;
+    margin-bottom: 0;
   }
 
   .row-number {
-    border: none;
-    padding-left: 0.5rem;
+    margin-bottom: 0;
   }
 }
