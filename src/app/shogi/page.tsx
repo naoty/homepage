@@ -30,6 +30,16 @@ export default function ShogiNotes() {
           ))}
         </ul>
       </section>
+      <footer className='col-start-2 row-start-4 flex gap-2 container border-t pt-4 md:pt-8'>
+        <Link href='/'>Top</Link>
+        <span>/</span>
+        <span className='text-slate-500'>将棋メモ</span>
+        <span className='ml-auto'>
+          <Link href='/posts'>
+            Posts
+          </Link>
+        </span>
+      </footer>
     </main>
   )
 }

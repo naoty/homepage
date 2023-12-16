@@ -30,6 +30,7 @@ export default function Home() {
           GitHub
         </a>
         <Link href='/posts'>Posts</Link>
+        <Link href='/shogi'>将棋メモ</Link>
       </footer>
     </main>
   )

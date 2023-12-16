@@ -28,9 +28,14 @@ export default function Page() {
         <Link href='/'>Top</Link>
         <span>/</span>
         <span className='text-slate-500'>Posts</span>
-        <a href='/posts/feed.xml' className='ml-auto underline hover:text-slate-500 transition'>
-          RSS
-        </a>
+        <span className='ml-auto'>
+          <Link href='/shogi' className='mx-2'>
+            将棋メモ
+          </Link>
+          <a href='/posts/feed.xml' className='underline hover:text-slate-500 transition'>
+            RSS
+          </a>
+        </span>
       </footer>
     </main>
   )
