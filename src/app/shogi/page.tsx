@@ -1,6 +1,7 @@
 import { allShogiNotes } from "contentlayer/generated"
 import { roboto } from "../fonts"
 import Link from "@/components/link"
+import { Metadata } from "next"
 
 export default function ShogiNotes() {
   const notes = allShogiNotes.sort((a, b) => a.time > b.time ? -1 : 1)
@@ -31,4 +32,9 @@ export default function ShogiNotes() {
       </section>
     </main>
   )
+}
+
+export const metadata: Metadata = {
+  title: '将棋メモ',
+  description: 'Naoto Kanekoが過去に書いた将棋メモの一覧ページです。',
 }
