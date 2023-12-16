@@ -6,7 +6,7 @@ export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[]
   const sorted = posts.sort((a, b) => a.time > b.time ? -1 : 1)
 
   return (
-    <>
+    <main className='grid grid-cols-mobile md:grid-cols-desktop grid-rows-mobile md:grid-rows-desktop'>
       <header className='col-start-2 row-start-2 container'>
         <h1 className='text-3xl font-bold mb-4 md:mb-8'>
           #{tag}
@@ -34,6 +34,6 @@ export default function TaggedPosts({ tag, posts }: { tag: string, posts: Post[]
           RSS
         </a>
       </footer>
-    </>
+    </main>
   )
 }

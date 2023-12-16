@@ -13,7 +13,7 @@ export default function Post({ post }: { post: Post }) {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <>
+    <main className='grid grid-cols-mobile md:grid-cols-desktop grid-rows-mobile md:grid-rows-desktop'>
       <header className='col-start-2 row-start-2 container'>
         <h1 className='text-3xl font-bold mb-4'>
           {post.title}
@@ -40,7 +40,7 @@ export default function Post({ post }: { post: Post }) {
           RSS
         </a>
       </footer>
-    </>
+    </main>
   )
 }
 

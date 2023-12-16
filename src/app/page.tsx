@@ -12,7 +12,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <main className='grid grid-cols-mobile md:grid-cols-desktop grid-rows-mobile md:grid-rows-desktop'>
       <header className='col-start-2 row-start-2 container'>
         <h1 className='text-3xl font-bold mb-4 md:mb-8'>
           {page.title}
@@ -31,7 +31,7 @@ export default function Home() {
         </a>
         <Link href='/posts'>Posts</Link>
       </footer>
-    </>
+    </main>
   )
 }
 
