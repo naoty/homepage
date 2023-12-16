@@ -20,6 +20,7 @@ const config: Config = {
       gridTemplateColumns: {
         'mobile': '1rem minmax(0, auto) 1rem',
         'desktop': '1fr 40rem 1fr',
+        'shogi-note-desktop': '1fr 60rem 1fr',
       },
       gridTemplateRows: {
         'mobile': '1rem minmax(0, auto) 1fr minmax(0, auto) 1rem',

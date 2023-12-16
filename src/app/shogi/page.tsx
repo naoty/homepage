@@ -1,11 +1,12 @@
 import { allShogiNotes } from "contentlayer/generated"
 import { roboto } from "../fonts"
+import Link from "@/components/link"
 
 export default function ShogiNotes() {
   const notes = allShogiNotes.sort((a, b) => a.time > b.time ? -1 : 1)
 
   return (
-    <>
+    <main className='grid grid-cols-mobile md:grid-cols-desktop grid-rows-mobile md:grid-rows-desktop'>
       <header className='col-start-2 row-start-2 container'>
         <h1 className='text-3xl font-bold mb-4 pb-4 md:pb-8'>将棋メモ</h1>
       </header>
@@ -16,7 +17,9 @@ export default function ShogiNotes() {
               <span className={`text-sm leading-[21px] ${roboto.className}`}>
                 {note.formattedTime}
               </span>
-              <span>{note.title}</span>
+              <Link href={`/shogi/${note.id}`}>
+                {note.title}
+              </Link>
               {note.tags.map(tag => (
                 <span key={tag}>
                   #{tag}
@@ -26,6 +29,6 @@ export default function ShogiNotes() {
           ))}
         </ul>
       </section>
-    </>
+    </main>
   )
 }
