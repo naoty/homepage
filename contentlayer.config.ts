@@ -38,9 +38,34 @@ export const Post = defineDocumentType(() => ({
   }
 }))
 
+export const ShogiNote = defineDocumentType(() => ({
+  name: 'ShogiNote',
+  filePathPattern: 'shogi-notes/**/post.md*',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    time: { type: 'string', required: true },
+    tags: { type: 'list', of: { type: 'string' }, default: [] }
+  },
+  computedFields: {
+    id: {
+      type: 'string',
+      resolve: (post) => post._raw.flattenedPath.split('/')[1],
+    },
+    formattedTime: {
+      type: 'string',
+      resolve: (post) => format(parseISO(post.time), 'y-MM-dd')
+    },
+    year: {
+      type: 'number',
+      resolve: (post) => parseISO(post.time).getFullYear()
+    }
+  }
+}))
+
 export default makeSource({
   contentDirPath: './contents',
-  documentTypes: [Page, Post],
+  documentTypes: [Page, Post, ShogiNote],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypePrettyCode],
