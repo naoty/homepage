@@ -20,7 +20,7 @@ export default function ShogiNote({ params }: { params: { slug: string } }) {
         <p className='flex gap-2 text-neutral-500 mb-8'>
           <span>{note.formattedTime}</span>
           {note.tags.map(tag => (
-            <span>#{tag}</span>
+            <span key={tag}>#{tag}</span>
           ))}
         </p>
       </header>
