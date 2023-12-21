@@ -1,4 +1,7 @@
 :where(.content) {
+  --line-height: 2.0;
+  --margin-bottom: 1.5rem;
+
   > *:first-child {
     margin-top: 0;
   }
@@ -8,44 +11,44 @@
   }
 
   div {
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom);
   }
 
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
-    line-height: 1.8;
+    line-height: var(--line-height);
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom);
   }
 
   h2 {
     font-size: 1.3rem;
     font-weight: bold;
-    line-height: 1.8;
+    line-height: var(--line-height);
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom);
   }
 
   p {
     font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
+    line-height: var(--line-height);
+    margin-bottom: var(--margin-bottom);
   }
 
   ul {
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom);
     padding-left: 2rem;
   }
 
   ol {
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom);
     padding-left: 2rem;
   }
 
   li {
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: var(--line-height);
     margin-bottom: 0.5rem;
   }
 
@@ -60,7 +63,7 @@
   pre {
     font-size: 0.9rem;
     line-height: 1.5;
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom);
     padding: 1rem;
     overflow-x: auto;
   }

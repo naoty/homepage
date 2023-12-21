@@ -14,8 +14,14 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'var(--font-noto-sans-jp)'],
-        mono: ['var(--font-source-code-pro)'],
+        sans: [
+          'var(--font-inter)',
+          'Hiragino Kaku Gothic ProN',
+          'var(--font-noto-sans-jp)',
+        ],
+        mono: [
+          'var(--font-source-code-pro)',
+        ],
       },
       gridTemplateColumns: {
         'mobile': '1rem minmax(0, auto) 1rem',
