@@ -18,7 +18,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     line-height: var(--line-height);
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: var(--margin-bottom);
   }
 
@@ -26,12 +26,15 @@
     font-size: 1.3rem;
     font-weight: bold;
     line-height: var(--line-height);
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: var(--margin-bottom);
   }
 
+  h1 + h2 {
+    margin-top: 0;
+  }
+
   p {
-    font-size: 1rem;
     line-height: var(--line-height);
     margin-bottom: var(--margin-bottom);
   }
