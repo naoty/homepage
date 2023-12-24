@@ -24,6 +24,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
       title: post.title,
       description: post.description,
+      openGraph: {
+        title: post.title,
+        description: post.description,
+      },
+      twitter: {
+        title: post.title,
+        description: post.description,
+      },
     }
   }
 
@@ -31,7 +39,15 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (taggedPosts.length > 0) {
     return {
       title: `Posts #${params.slug}`,
-      description: `#${params.slug}がついた記事の一覧ページです。`
+      description: `#${params.slug}がついた記事の一覧ページです。`,
+      openGraph: {
+        title: `Posts #${params.slug}`,
+        description: `#${params.slug}がついた記事の一覧ページです。`,
+      },
+      twitter: {
+        title: `Posts #${params.slug}`,
+        description: `#${params.slug}がついた記事の一覧ページです。`,
+      },
     }
   }
 

@@ -27,7 +27,16 @@ export const metadata: Metadata = {
       'application/rss+xml': '/posts/feed.xml',
     },
   },
+  openGraph: {
+    title: 'Naoto Kaneko',
+    description: 'Naoto Kanekoのホームページです',
+    url: 'https://naoty.dev',
+    type: 'website',
+  },
   twitter: {
     card: 'summary',
+    site: '@naoty_k',
+    title: 'Naoto Kaneko',
+    description: 'Naoto Kanekoのホームページです',
   },
 }

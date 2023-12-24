@@ -44,4 +44,12 @@ export default function Page() {
 export const metadata: Metadata = {
   title: 'Posts',
   description: 'Naoto Kanekoが過去に書いた記事の一覧ページです。',
+  openGraph: {
+    title: 'Posts',
+    description: 'Naoto Kanekoが過去に書いた記事の一覧ページです。',
+  },
+  twitter: {
+    title: 'Posts',
+    description: 'Naoto Kanekoが過去に書いた記事の一覧ページです。',
+  },
 }
