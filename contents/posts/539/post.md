@@ -69,6 +69,13 @@ $ ln -s /home/naoty/repos/github.com/naoty/fzf-functions/history.zsh /home/naoty
 $ ln -s /home/naoty/repos/github.com/naoty/fzf-functions/git.zsh /home/naoty/.zsh/functions/
 $ ln -s /home/naoty/repos/github.com/naoty/fzf-functions/ghq.zsh /home/naoty/.zsh/functions/
 $ vim .zshrc.local # keybindを設定する
+
+# Android Studio
+$ sudo apt install -y clang cmake ninja-build pkg-config libgtk-3-dev
+$ wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.23/android-studio-2023.2.1.23-linux.tar.gz
+$ android-studio/bin/studio.sh # ウィザードが開くのでセットアップを進めて、コマンドラインツールをインストールする
+$ flutter doctor --android-licenses # ライセンスに許諾する
+$ flutter doctor # Android Studioのセットアップが完了したことを確認する
 ```
 
 - 各言語のバージョンマネージャーを使うのは面倒なので今回からasdfを使ってみた。すごい楽。
