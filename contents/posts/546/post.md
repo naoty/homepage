@@ -148,7 +148,7 @@ export async function createSessionCookie(idToken: string, expiresIn: number) {
 
 - 先ほど紹介した`firebase.client.ts`とは異なりサーバー側でのみ実行されることを意図しているため、`*.server.ts`とsuffixをつけている。
 - クライアント側ではFirebase SDKを使っていたが、サーバー側ではFirebase Admin SDKを使う。アプリの初期化にはJSONファイルを用いてアプリケーションデフォルト認証による初期化をおこなうこともできるが、Vercelなどのサーバーレス環境ではJSONファイルを扱いにくいため、上記のように環境変数を使った認証にしている。
-- Firebase Admin SDKで初期化したアプリを使い`createSessionCookie()`によってIDトークンを検証しつつ、IDトークンからセッションCookieを生成する。IDトークンの検証には`verifyIdToken()`という関数もあるが、`createSessionCookie()`でも内部的にIDトークンを検証する。
+- Firebase Admin SDKで初期化したアプリを使い`createSessionCookie()`によってIDトークンを検証しつつ、IDトークンからセッションCookieを生成する。このとき内部的にFirebase Authenticationから公開鍵を取得しており、キャッシュされていればキャッシュを利用するようになっている。
 
 ## セッションCookieの検証
 
