@@ -1,3 +1,5 @@
+import { Outlet, Scripts, ScrollRestoration } from "react-router";
+
 export default function Root() {
   return (
     <html lang="ja">
@@ -6,7 +8,9 @@ export default function Root() {
         <title>Naoto Kaneko</title>
       </head>
       <body>
-        <h1>Hello react-router!</h1>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
       </body>
     </html>
   );
