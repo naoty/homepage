@@ -3,8 +3,8 @@ import Link from "~/components/link";
 
 export default function Home() {
   return (
-    <main className="flex w-[750px] justify-center space-x-6">
-      <Container>
+    <main className="grid grid-cols-8 gap-x-6 pt-6">
+      <Container className="col-span-4 col-start-3">
         <h1 className="border-rails-border-main border-b pb-3 text-3xl font-bold">
           Naoto Kaneko
         </h1>
@@ -20,7 +20,7 @@ export default function Home() {
           趣味は将棋です。現在はアマチュア二段の腕前で、三間飛車を好んで指しています。ネット対戦が主ですが、週末には近所の指導対局会やアマチュアの大会にも参加しています。
         </p>
       </Container>
-      <nav className="w-[175px] space-y-3 pt-6">
+      <nav className="col-span-1 col-start-7 space-y-3 pt-6">
         <h2 className="border-rails-border-main border-b pb-3 font-bold">
           Links
         </h2>

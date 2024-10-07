@@ -8,7 +8,7 @@ export default function Root() {
         <meta charSet="utf-8" />
         <title>Naoto Kaneko</title>
       </head>
-      <body className="bg-rails-background flex justify-center pt-6">
+      <body className="bg-rails-background">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
