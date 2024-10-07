@@ -26,10 +26,19 @@ export default function Home() {
         </h2>
         <ul>
           <li>
-            <Link href="https://x.com/naoty_k">X</Link>
+            <Link href="/posts" className="text-sm">
+              Posts
+            </Link>
           </li>
           <li>
-            <Link href="https://github.com/naoty">GitHub</Link>
+            <Link href="https://x.com/naoty_k" className="text-sm">
+              X
+            </Link>
+          </li>
+          <li>
+            <Link href="https://github.com/naoty" className="text-sm">
+              GitHub
+            </Link>
           </li>
         </ul>
       </nav>
