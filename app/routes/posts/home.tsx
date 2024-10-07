@@ -1,3 +1,9 @@
+import Container from "~/components/container";
+
 export default function Home() {
-  return <h1>Here is /posts</h1>;
+  return (
+    <Container>
+      <h1>Here is /posts</h1>
+    </Container>
+  );
 }

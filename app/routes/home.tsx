@@ -1,7 +1,10 @@
+import Container from "~/components/container";
+import Link from "~/components/link";
+
 export default function Home() {
   return (
     <main className="flex w-[750px] justify-center space-x-6">
-      <section className="border-3 border-rails-border-content w-[500px] space-y-6 bg-white p-6">
+      <Container>
         <h1 className="border-rails-border-main border-b pb-3 text-3xl font-bold">
           Naoto Kaneko
         </h1>
@@ -16,27 +19,17 @@ export default function Home() {
         <p>
           趣味は将棋です。現在はアマチュア二段の腕前で、三間飛車を好んで指しています。ネット対戦が主ですが、週末には近所の指導対局会やアマチュアの大会にも参加しています。
         </p>
-      </section>
+      </Container>
       <nav className="w-[175px] space-y-3 pt-6">
         <h2 className="border-rails-border-main border-b pb-3 font-bold">
           Links
         </h2>
         <ul>
           <li>
-            <a
-              href="https://x.com/naoty_k"
-              className="text-rails-link hover:bg-rails-link text-sm underline hover:text-white hover:no-underline"
-            >
-              X
-            </a>
+            <Link href="https://x.com/naoty_k">X</Link>
           </li>
           <li>
-            <a
-              href="https://github.com/naoty"
-              className="text-rails-link hover:bg-rails-link text-sm underline hover:text-white hover:no-underline"
-            >
-              GitHub
-            </a>
+            <Link href="https://github.com/naoty">GitHub</Link>
           </li>
         </ul>
       </nav>
