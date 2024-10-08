@@ -6,5 +6,8 @@ import {
 
 export const routes: RouteConfig = [
   index("routes/home.tsx"),
-  route("posts", "routes/posts.tsx", [index("routes/posts/home.tsx")]),
+  route("posts", "routes/posts.tsx", [
+    index("routes/posts/home.tsx"),
+    route(":id", "routes/posts/post.tsx"),
+  ]),
 ];
