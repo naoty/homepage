@@ -1,5 +1,6 @@
 import Container from "~/components/container";
 import type * as Route from "./+types.post";
+import classes from "./post.module.css";
 
 export async function loader({ params }: Route.LoaderArgs) {
   // ref: https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#imports-must-start-with--or-
@@ -15,7 +16,10 @@ export default function Post({
         <header>
           <h1 className="text-2xl font-bold">{attributes.title}</h1>
         </header>
-        <article dangerouslySetInnerHTML={{ __html: html }} />
+        <article
+          className={classes.post}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </Container>
     </main>
   );

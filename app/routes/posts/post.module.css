@@ -1,0 +1,46 @@
+.post {
+  > * {
+    margin-top: 1.5rem;
+  }
+
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  a {
+    color: #03c;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: white;
+    background-color: #03c;
+    text-decoration: none;
+  }
+
+  ul, ol {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-top: 0.5rem;
+  }
+
+  pre {
+    background-color: black;
+    color: white;
+    font-size: 0.9rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  hr {
+    border: 1px solid #aaa;
+  }
+}
