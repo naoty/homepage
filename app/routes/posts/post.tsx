@@ -1,6 +1,6 @@
 import Container from "~/components/container";
+import classes from "~/content.module.css";
 import type * as Route from "./+types.post";
-import classes from "./post.module.css";
 
 export async function loader({ params }: Route.LoaderArgs) {
   // ref: https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#imports-must-start-with--or-
