@@ -15,7 +15,7 @@ export default function Post({
       <Container className="col-span-4 col-start-3">
         <header className="space-y-1">
           <h1 className="text-2xl font-bold">{attributes.title}</h1>
-          <p className="text-rails-text-sub text-sm">
+          <p className="text-sm text-rails-text-sub">
             <time dateTime={attributes.time}>{attributes.time}</time>
           </p>
         </header>

@@ -6,7 +6,7 @@ export default function Link(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
     <a
       href={props.href}
       className={twMerge(
-        "text-rails-link hover:bg-rails-link underline hover:text-white hover:no-underline",
+        "text-rails-link underline hover:bg-rails-link hover:text-white hover:no-underline",
         props.className,
       )}
     >
