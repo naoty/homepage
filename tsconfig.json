@@ -8,6 +8,7 @@
     "paths": {
       "~/*": ["./app/*", "./contents/*"]
     },
+    "rootDirs": [".", "./.react-router/types"],
     "strict": true,
     "target": "ES2022",
     "types": ["vite/client"],

@@ -1,7 +1,7 @@
 import * as path from "path";
 import Container from "~/components/container";
 import Link from "~/components/link";
-import type * as Route from "./+types.posts";
+import type * as Route from "./+types.home";
 
 interface Post {
   attributes: Frontmatter;
