@@ -16,7 +16,7 @@ export default function Home() {
         />
       </Container>
       <nav className="col-span-1 col-start-7 space-y-3 pt-6">
-        <h2 className="border-b border-rails-border-main pb-3 font-bold">
+        <h2 className="border-b border-rails-border-main pb-1 font-bold">
           Links
         </h2>
         <ul>

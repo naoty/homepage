@@ -1,5 +1,4 @@
 import * as path from "path";
-import Container from "~/components/container";
 import Link from "~/components/link";
 import type * as Route from "./+types.home";
 
@@ -38,19 +37,17 @@ export function loader() {
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
-    <main className="grid grid-cols-8 gap-x-6 py-6">
-      <Container className="col-span-4 col-start-3">
-        <h1 className="border-b border-rails-border-main pb-3 text-3xl font-bold">
-          Posts
-        </h1>
-        <ul className="list-disc pl-6">
-          {loaderData.attributes.map((attribute) => (
-            <li key={attribute.id}>
-              <Link href={`/posts/${attribute.id}`}>{attribute.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </Container>
-    </main>
+    <>
+      <h1 className="border-b border-rails-border-main pb-3 text-3xl font-bold">
+        Posts
+      </h1>
+      <ul className="list-disc pl-6">
+        {loaderData.attributes.map((attribute) => (
+          <li key={attribute.id}>
+            <Link href={`/posts/${attribute.id}`}>{attribute.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
