@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "react-router dev",
-    "typecheck": "react-router typegen && tsc --noEmit"
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "build": "react-router build"
   },
   "dependencies": {
     "@react-router/node": "^7.0.0-pre.0",
