@@ -1,16 +1,18 @@
 import { type AnchorHTMLAttributes } from "react";
+import { Link as ReactRouterLink } from "react-router";
 import { twMerge } from "tailwind-merge";
 
 export default function Link(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
-  return (
-    <a
-      href={props.href}
-      className={twMerge(
-        "text-rails-link underline hover:bg-rails-link hover:text-white hover:no-underline",
-        props.className,
-      )}
-    >
+  const classNames = twMerge(
+    "text-rails-link underline hover:bg-rails-link hover:text-white hover:no-underline",
+    props.className,
+  );
+
+  return typeof props.href === "string" ? (
+    <ReactRouterLink to={props.href} className={classNames}>
       {props.children}
-    </a>
+    </ReactRouterLink>
+  ) : (
+    <span className={classNames}>{props.children}</span>
   );
 }
