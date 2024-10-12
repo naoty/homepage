@@ -15,6 +15,9 @@ export default {
             content: "#aaa",
           },
           link: "#03c",
+          text: {
+            sub: "#888",
+          },
         },
       },
       fontFamily: {

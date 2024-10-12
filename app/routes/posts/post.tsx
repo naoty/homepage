@@ -13,8 +13,11 @@ export default function Post({
   return (
     <main className="grid grid-cols-8 gap-x-6 py-6">
       <Container className="col-span-4 col-start-3">
-        <header>
+        <header className="space-y-1">
           <h1 className="text-2xl font-bold">{attributes.title}</h1>
+          <p className="text-rails-text-sub text-sm">
+            <time dateTime={attributes.time}>{attributes.time}</time>
+          </p>
         </header>
         <article
           className={classes.post}
