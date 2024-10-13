@@ -1,4 +1,4 @@
-import { Outlet, Scripts, ScrollRestoration } from "react-router";
+import { Links, Outlet, Scripts, ScrollRestoration } from "react-router";
 import "./index.css";
 
 export default function Root() {
@@ -7,6 +7,7 @@ export default function Root() {
       <head>
         <meta charSet="utf-8" />
         <title>Naoto Kaneko</title>
+        <Links />
       </head>
       <body className="bg-rails-background">
         <Outlet />
