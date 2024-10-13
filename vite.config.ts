@@ -1,5 +1,5 @@
 import { reactRouter } from "@react-router/dev/vite";
-import { globSync } from "fs";
+import { glob } from "glob";
 import { dirname } from "path";
 import { defineConfig } from "vite";
 import { Mode, plugin as mdPlugin } from "vite-plugin-markdown";
@@ -9,7 +9,8 @@ export default defineConfig({
   plugins: [
     reactRouter({
       async prerender() {
-        const postPaths = globSync("./contents/posts/**/post.md")
+        const postFilePaths = await glob("./contents/posts/**/post.md");
+        const postPaths = postFilePaths
           .map((path) => dirname(path).split("/").pop())
           .map((id) => `/posts/${id}`);
         return ["/", "/posts", ...postPaths];
