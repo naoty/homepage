@@ -1,7 +1,21 @@
+import { type MetaFunction } from "react-router";
 import Container from "~/components/container";
 import Link from "~/components/link";
 import classes from "~/content.module.css";
-import { html } from "~/pages/home.md";
+import { attributes, html } from "~/pages/home.md";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: attributes.title },
+    { property: "og:title", content: attributes.title },
+    ...(attributes.description
+      ? [
+          { name: "description", content: attributes.description },
+          { property: "og:description", content: attributes.description },
+        ]
+      : []),
+  ];
+};
 
 export default function Home() {
   return (

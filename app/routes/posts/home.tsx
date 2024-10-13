@@ -1,4 +1,5 @@
 import * as path from "path";
+import { type MetaFunction } from "react-router";
 import Link from "~/components/link";
 import type * as Route from "./+types.home";
 
@@ -34,6 +35,24 @@ export function loader() {
     .sort((a, b) => b.id - a.id);
   return { attributes };
 }
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Naoto Kaneko's posts" },
+    {
+      name: "description",
+      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
+    },
+    {
+      property: "og:title",
+      content: "Naoto Kaneko's posts",
+    },
+    {
+      property: "og:description",
+      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
+    },
+  ];
+};
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
