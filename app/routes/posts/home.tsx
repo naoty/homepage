@@ -3,24 +3,6 @@ import { type MetaFunction } from "react-router";
 import Link from "~/components/link";
 import type * as Route from "./+types.home";
 
-interface Post {
-  attributes: Frontmatter;
-  html: string;
-}
-
-interface Frontmatter {
-  title: string;
-  time: string;
-  tags: string[];
-}
-
-interface PostAttribute {
-  id: number;
-  title: string;
-  time: string;
-  tags: string[];
-}
-
 export function loader() {
   const posts = import.meta.glob<Post>("../../../contents/posts/**/*.md", {
     eager: true,
