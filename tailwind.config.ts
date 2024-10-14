@@ -22,7 +22,7 @@ export default {
       },
       fontFamily: {
         sans: ["Lucida Grande", "Bitstream Vera Sans", "Verdana", "Meiryo"],
-        mono: ["Menlo", "Courier New", "Terminal"],
+        mono: ["Menlo", "Consolas", "Cascadia Mono"],
       },
     },
   },

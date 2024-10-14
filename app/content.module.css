@@ -32,10 +32,20 @@
     margin-top: 0.5rem;
   }
 
+  table {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 0.25rem;
+  }
+
   pre {
     background-color: black;
     color: white;
-    font-size: 0.9rem;
     padding: 1rem;
     overflow-x: auto;
   }
