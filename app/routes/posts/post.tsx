@@ -17,11 +17,20 @@ export const meta: MetaFunction<typeof loader> = (args) => {
   const post = args.data as Post;
   return [
     { title: post.attributes.title },
+    { name: "author", content: "Naoto Kaneko" },
     { property: "og:title", content: post.attributes.title },
+    { property: "og:type", content: "article" },
+    { property: "twitter:card", content: "summary" },
+    { property: "twitter:site", content: "@naoty_k" },
+    { property: "twitter:title", content: post.attributes.title },
     ...(post.attributes.description
       ? [
           { name: "description", content: post.attributes.description },
           { property: "og:description", content: post.attributes.description },
+          {
+            property: "twitter:description",
+            content: post.attributes.description,
+          },
         ]
       : []),
   ];

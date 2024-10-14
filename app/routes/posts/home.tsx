@@ -25,12 +25,17 @@ export const meta: MetaFunction = () => {
       name: "description",
       content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
     },
-    {
-      property: "og:title",
-      content: "Naoto Kaneko's posts",
-    },
+    { property: "og:title", content: "Naoto Kaneko's posts" },
     {
       property: "og:description",
+      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
+    },
+    { property: "og:type", content: "blog" },
+    { property: "twitter:card", content: "summary" },
+    { property: "twitter:site", content: "@naoty_k" },
+    { property: "twitter:title", content: "Naoto Kaneko's posts" },
+    {
+      property: "twitter:description",
       content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
     },
   ];

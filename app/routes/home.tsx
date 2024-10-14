@@ -8,10 +8,15 @@ export const meta: MetaFunction = () => {
   return [
     { title: attributes.title },
     { property: "og:title", content: attributes.title },
+    { property: "og:type", content: "website" },
+    { property: "twitter:card", content: "summary" },
+    { property: "twitter:site", content: "@naoty_k" },
+    { property: "twitter:title", content: attributes.title },
     ...(attributes.description
       ? [
           { name: "description", content: attributes.description },
           { property: "og:description", content: attributes.description },
+          { property: "twitter:description", content: attributes.description },
         ]
       : []),
   ];
