@@ -24,7 +24,7 @@ export const meta: MetaFunction = () => {
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-12 py-6 md:gap-x-6">
+    <main className="grid grid-cols-12 gap-x-6 py-6">
       <Container className="col-span-10 col-start-2 md:col-span-6 md:col-start-4">
         <h1 className="border-b border-rails-border-main pb-3 text-3xl font-bold">
           Naoto Kaneko
