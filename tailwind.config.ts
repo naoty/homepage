@@ -21,8 +21,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Lucida Grande", "Bitstream Vera Sans", "Verdana", "Meiryo"],
-        mono: ["Menlo", "Consolas", "Cascadia Mono"],
+        sans: ["Verdana", "Meiryo", "sans-serif"],
+        mono: ["Menlo", "Consolas", "monospace"],
       },
     },
   },
