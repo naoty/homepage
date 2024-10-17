@@ -13,7 +13,7 @@ export default function Link(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
   );
 
   return typeof props.href === "string" ? (
-    <span className="inline-flex items-center space-x-1">
+    <span className="space-x-1">
       <ReactRouterLink to={props.href} className={classNames}>
         {props.children}
       </ReactRouterLink>
