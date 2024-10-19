@@ -1,5 +1,6 @@
 import { reactRouter } from "@react-router/dev/vite";
 import { glob } from "glob";
+import hljs from "highlight.js";
 import { dirname } from "path";
 import { defineConfig } from "vite";
 import { Mode, plugin as mdPlugin } from "vite-plugin-markdown";
@@ -17,6 +18,24 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
-    mdPlugin({ mode: [Mode.HTML] }),
+    mdPlugin({
+      mode: [Mode.HTML],
+      markdownIt: {
+        highlight(str: string, lang: string): string {
+          if (lang.length === 0) {
+            return "";
+          }
+
+          // `lang:filename`となっている場合があるので`filename`を無視する
+          lang = lang.split(":")[0];
+
+          try {
+            return hljs.highlight(str, { language: lang }).value;
+          } catch {
+            return "";
+          }
+        },
+      },
+    }),
   ],
 });
