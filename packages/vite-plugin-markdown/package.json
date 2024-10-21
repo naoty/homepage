@@ -1,0 +1,5 @@
+{
+  "name": "vite-plugin-markdown",
+  "private": true,
+  "type": "module"
+}
