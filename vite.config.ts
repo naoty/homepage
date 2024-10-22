@@ -2,7 +2,7 @@ import { reactRouter } from "@react-router/dev/vite";
 import { glob } from "glob";
 import { dirname } from "path";
 import { defineConfig } from "vite";
-import markdown from "vite-plugin-markdown";
+import { markdown } from "vite-plugin-markdown";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({

@@ -1,3 +1,5 @@
-.react-router
-build
+/.react-router
+/build
+/packages/*/dist
+
 node_modules
