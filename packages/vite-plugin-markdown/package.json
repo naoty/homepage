@@ -1,5 +1,6 @@
 {
   "name": "vite-plugin-markdown",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "main": "src/index.js"
 }
