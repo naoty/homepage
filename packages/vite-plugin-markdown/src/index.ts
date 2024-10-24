@@ -1,11 +1,21 @@
 import rehypeStringify from "rehype-stringify";
+import remarkFrontmatter from "remark-frontmatter";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
+import type { Node } from "unist";
+import type { VFile } from "vfile";
+import { matter } from "vfile-matter";
 import type { Plugin } from "vite";
 
 const processor = unified()
   .use(remarkParse)
+  .use(remarkFrontmatter)
+  .use(function () {
+    return function (tree: Node, file: VFile) {
+      matter(file);
+    };
+  })
   .use(remarkRehype)
   .use(rehypeStringify);
 
@@ -15,15 +25,9 @@ export function markdown(): Plugin {
     async transform(code, id) {
       if (id.endsWith(".md")) {
         const lines = [];
-        const processed = await processor.process(code);
-        lines.push(`const html = ${JSON.stringify(processed.toString())}`);
-
-        const attributes = {
-          title: "",
-          time: "",
-          tags: [],
-        };
-        lines.push(`const attributes = ${JSON.stringify(attributes)}`);
+        const file = await processor.process(code);
+        lines.push(`const html = ${JSON.stringify(file.toString())}`);
+        lines.push(`const attributes = ${JSON.stringify(file.data.matter)}`);
         lines.push(`export { html, attributes }`);
 
         return { code: lines.join("\n") };
