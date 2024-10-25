@@ -27,16 +27,17 @@ export function markdown(): Plugin {
   return {
     name: "vite-plugin-markdown",
     async transform(code, id) {
-      if (id.endsWith(".md")) {
-        const lines = [];
-        const file = await processor.process(code);
-        lines.push(`const html = ${JSON.stringify(file.toString())}`);
-        lines.push(`const attributes = ${JSON.stringify(file.data.matter)}`);
-        lines.push(`export { html, attributes }`);
-
-        return { code: lines.join("\n") };
+      if (!id.endsWith(".md")) {
+        return null;
       }
-      return { code, map: null };
+
+      const lines = [];
+      const file = await processor.process(code);
+      lines.push(`const html = ${JSON.stringify(file.toString())}`);
+      lines.push(`const attributes = ${JSON.stringify(file.data.matter)}`);
+      lines.push(`export { html, attributes }`);
+
+      return { code: lines.join("\n") };
     },
   };
 }
