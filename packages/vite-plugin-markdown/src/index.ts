@@ -1,3 +1,4 @@
+import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
@@ -19,6 +20,7 @@ const processor = unified()
   })
   .use(remarkGfm)
   .use(remarkRehype)
+  .use(rehypeHighlight)
   .use(rehypeStringify);
 
 export function markdown(): Plugin {
