@@ -43,11 +43,8 @@
     padding: 0.25rem;
   }
 
-  pre {
+  pre > code {
     font-size: 0.9rem;
-    background-color: #232323;
-    color: white;
-    padding: 1rem;
     overflow-x: auto;
   }
 
