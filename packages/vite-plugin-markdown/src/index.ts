@@ -20,7 +20,7 @@ const processor = unified()
   })
   .use(remarkGfm)
   .use(remarkRehype)
-  .use(rehypeHighlight)
+  .use(rehypeHighlight, { detect: true })
   .use(rehypeStringify);
 
 export function markdown(): Plugin {
