@@ -211,3 +211,5 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
 
 # To Be Continued...
 ここまではなんとなくわかっている範囲だったので、次回以降いよいよ謎が深まってくるTypeScriptやPrettierをはじめとしたプラグインの設定について書きたいです。
+
+[その(2)](/posts/550)
