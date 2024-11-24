@@ -12,7 +12,7 @@ tags: ['javascript']
 エラーになりそうなサンプルのコードを用意する。
 
 ```js
-var name = 'naoty'
+var me = 'naoty'
 console.log('hello')
 ```
 
@@ -37,7 +37,7 @@ console.log('hello')
 ```sh
 % npx eslint
 /home/naoty/repos/localhost/hello-eslint/main.js
-  1:5  error  'name' is assigned a value but never used  no-unused-vars
+  1:5  error  'me' is assigned a value but never used  no-unused-vars
 
 ✖ 1 problem (1 error, 0 warnings)
 ```
@@ -63,7 +63,7 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
 ```sh
 % npx eslint
 /home/naoty/repos/localhost/hello-eslint/main.js
-  1:5   error  'name' is assigned a value but never used  no-unused-vars
+  1:5   error  'me' is assigned a value but never used  no-unused-vars
   1:12  error  Strings must use doublequote               quotes
   2:13  error  Strings must use doublequote               quotes
 
@@ -76,7 +76,7 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
 ```sh
 % npx eslint --fix
 /home/naoty/repos/localhost/hello-eslint/main.js
-  1:5  error  'name' is assigned a value but never used  no-unused-vars
+  1:5  error  'me' is assigned a value but never used  no-unused-vars
 
 ✖ 1 problem (1 error, 0 warnings)
 ```
@@ -107,7 +107,7 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
 ```sh
 % npx eslint
 /home/naoty/repos/localhost/hello-eslint/main.js
-  1:5  error  'name' is assigned a value but never used  no-unused-vars
+  1:5  error  'me' is assigned a value but never used  no-unused-vars
   2:1  error  'console' is not defined                   no-undef
 
 ✖ 2 problems (2 errors, 0 warnings)
@@ -124,7 +124,7 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
 - `readonly`または`false`: 読み取りのみ
 
 ```diff
- import js from "@eslint/js";
+ import eslint from "@eslint/js";
  
  export default [
 +  {
@@ -134,14 +134,14 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
 +      },
 +    },
 +  },
-   js.configs.recommended,
+   eslint.configs.recommended,
  ];
 ```
 
 ```sh
 % npx eslint
 /home/naoty/repos/localhost/hello-eslint/main.js
-  1:5  error  'name' is assigned a value but never used  no-unused-vars
+  1:5  error  'me' is assigned a value but never used  no-unused-vars
 
 ✖ 1 problem (1 error, 0 warnings)
 ```
@@ -151,7 +151,7 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
 `console`や`window`といったグローバル変数を調べ上げるのも大変なので、[globals](https://github.com/sindresorhus/globals)というパッケージを使うのが一般的みたいだ。
 
 ```diff
- import js from "@eslint/js";
+ import eslint from "@eslint/js";
 +import globals from "globals";
  
  export default [
@@ -164,7 +164,7 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
        },
      },
    },
-   js.configs.recommended,
+   eslint.configs.recommended,
  ];
 ```
 
@@ -176,7 +176,7 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
 `recommended`ではエラーになっていた未使用の変数を無視するようにし、`recommended`では特に触れてなかった`var`の使用を禁止するようにする。
 
 ```diff
- import js from "@eslint/js";
+ import eslint from "@eslint/js";
  import globals from "globals";
  
  export default [
@@ -188,7 +188,7 @@ https://eslint.org/docs/latest/rules/ にルールがまとまっている。ダ
        },
      },
    },
-   js.configs.recommended,
+   eslint.configs.recommended,
 +  {
 +    rules: {
 +      "no-unused-vars": "off",

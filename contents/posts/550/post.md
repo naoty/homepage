@@ -8,7 +8,7 @@ tags: ['javascript']
 [前回](/posts/549)、eslintの設定をゼロから書き始めて以下のような設定になった。
 
 ```js
-import js from "@eslint/js";
+import eslint from "@eslint/js";
 import globals from "globals";
 
 export default [
@@ -20,7 +20,7 @@ export default [
       },
     },
   },
-  js.configs.recommended,
+  eslint.configs.recommended,
   {
     rules: {
       "no-unused-vars": "off",
@@ -33,7 +33,7 @@ export default [
 サンプルコードはこれ。
 
 ```js
-var name = 'naoty'
+var me = 'naoty'
 console.log('hello')
 ```
 
@@ -61,8 +61,8 @@ README.md 17ms (unchanged)
 `main.js`だけが変更されたようなので見てみると、確かにダブルクォーテーションに変更され、文末セミコロンがついている。
 
 ```diff
--var name = 'naoty'
-+var name = "naoty";
+-var me = 'naoty'
++var me = "naoty";
 -console.log('hello')
 +console.log("hello");
 ```
@@ -73,7 +73,7 @@ eslintにはdeprecatedではあるものの`quotes`や`semi`といった見た�
 そこで、あえてeslintの設定とprettierの設定がコンフリクトするようにしてみる。prettierはデフォルトでダブルクォーテーションを適用するため、eslintではシングルクォーテーションを強制させる。
 
 ```diff
- import js from "@eslint/js";
+ import eslint from "@eslint/js";
  import globals from "globals";
  
  export default [
@@ -85,7 +85,7 @@ eslintにはdeprecatedではあるものの`quotes`や`semi`といった見た�
        },
      },
    },
-   js.configs.recommended,
+   eslint.configs.recommended,
    {
      rules: {
        "no-unused-vars": "off",
@@ -116,7 +116,7 @@ eslintにはdeprecatedではあるものの`quotes`や`semi`といった見た�
 さっそくこれを使ってコンフリクトを解消してみる。
 
 ```diff
- import js from "@eslint/js";
+ import eslint from "@eslint/js";
 +import prettier from "eslint-config-prettier";
  import globals from "globals";
  
@@ -129,7 +129,7 @@ eslintにはdeprecatedではあるものの`quotes`や`semi`といった見た�
        },
      },
    },
-   js.configs.recommended,
+   eslint.configs.recommended,
    {
      rules: {
        "no-unused-vars": "off",
@@ -157,7 +157,7 @@ eslintにはdeprecatedではあるものの`quotes`や`semi`といった見た�
 最後にコンフリクトを再現させるために追加したルールを消しておく。
 
 ```diff
- import js from "@eslint/js";
+ import eslint from "@eslint/js";
  import prettier from "eslint-config-prettier";
  import globals from "globals";
  
@@ -170,7 +170,7 @@ eslintにはdeprecatedではあるものの`quotes`や`semi`といった見た�
        },
      },
    },
-   js.configs.recommended,
+   eslint.configs.recommended,
    {
      rules: {
        "no-unused-vars": "off",
@@ -185,8 +185,8 @@ eslintにはdeprecatedではあるものの`quotes`や`semi`といった見た�
 また、`no-var`のエラーが出ている部分も修正しておく。
 
 ```diff
--var name = "naoty";
-+const name = "naoty";
+-var me = "naoty";
++const me = "naoty";
  console.log("hello");
 ```
 
@@ -203,3 +203,5 @@ eslint-config-prettierでコンフリクトする設定を無効化し、eslint�
 今回の設定で構文上の問題はeslintでチェックし、フォーマットの問題はprettierでチェックできるようになった。
 
 次はTypeScript用の設定をおこない、より実践的な設定にアップデートしていきたいです。
+
+[その(3)](/posts/551)
