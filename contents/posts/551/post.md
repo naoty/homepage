@@ -330,3 +330,5 @@ Parser: typescript-eslint/parser
 今回はTypeScript向けにeslintを設定しつつ、その中で`files`によって特定のファイルのみに設定を適用する書き方についても見ることができた。
 
 次回はReactの開発で便利なeslintの設定を見ていきたいです。
+
+[その(4)](/posts/552)
