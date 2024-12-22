@@ -1,40 +1,32 @@
-import { MetaFunction } from "react-router";
 import classes from "~/content.module.css";
-import type * as Route from "./+types.post";
-
-type Post = {
-  attributes: Frontmatter;
-  html: string;
-};
+import { Route } from "./+types/post";
 
 export async function loader({ params }: Route.LoaderArgs): Promise<Post> {
   // ref: https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#imports-must-start-with--or-
   return await import(`../../../contents/posts/${params.id}/post.md`);
 }
 
-export const meta: MetaFunction<typeof loader> = (args) => {
-  // react-rouer v7.0.0-pre.0時点ではmetaの型を生成する手段がないため、手作業で定義する
-  const post = args.data as Post;
+export function meta({ data }: Route.MetaArgs) {
   return [
-    { title: post.attributes.title },
+    { title: data.attributes.title },
     { name: "author", content: "Naoto Kaneko" },
-    { property: "og:title", content: post.attributes.title },
+    { property: "og:title", content: data.attributes.title },
     { property: "og:type", content: "article" },
     { property: "twitter:card", content: "summary" },
     { property: "twitter:site", content: "@naoty_k" },
-    { property: "twitter:title", content: post.attributes.title },
-    ...(post.attributes.description
+    { property: "twitter:title", content: data.attributes.title },
+    ...(data.attributes.description
       ? [
-          { name: "description", content: post.attributes.description },
-          { property: "og:description", content: post.attributes.description },
+          { name: "description", content: data.attributes.description },
+          { property: "og:description", content: data.attributes.description },
           {
             property: "twitter:description",
-            content: post.attributes.description,
+            content: data.attributes.description,
           },
         ]
       : []),
   ];
-};
+}
 
 export default function Post({
   loaderData: { attributes, html },

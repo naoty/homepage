@@ -1,10 +1,9 @@
-import { type MetaFunction } from "react-router";
 import Container from "~/components/container";
 import Link from "~/components/link";
 import classes from "~/content.module.css";
 import { attributes, html } from "~/pages/home.md";
 
-export const meta: MetaFunction = () => {
+export const meta = () => {
   return [
     { title: attributes.title },
     { property: "og:title", content: attributes.title },

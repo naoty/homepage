@@ -1,7 +1,6 @@
 import * as path from "path";
-import { type MetaFunction } from "react-router";
 import Link from "~/components/link";
-import type * as Route from "./+types.home";
+import { Route } from "./+types/home";
 
 export function loader() {
   const posts = import.meta.glob<Post>("../../../contents/posts/**/*.md", {
@@ -18,7 +17,7 @@ export function loader() {
   return { attributes };
 }
 
-export const meta: MetaFunction = () => {
+export const meta = () => {
   return [
     { title: "Naoto Kaneko's posts" },
     {
