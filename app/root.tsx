@@ -10,7 +10,7 @@ export default function Root() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-rails-background">
+      <body className="bg-main">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

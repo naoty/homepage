@@ -6,7 +6,7 @@ export default function Container(props: HTMLAttributes<HTMLElement>) {
     <section
       {...props}
       className={twMerge(
-        "border-3 border-rails-border-content space-y-6 bg-white p-6",
+        "border-main space-y-6 border-3 bg-white p-6",
         props.className,
       )}
     >

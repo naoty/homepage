@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main className="grid grid-cols-12 gap-x-6 py-6">
       <Container className="col-span-10 col-start-2 md:col-span-6 md:col-start-4">
-        <h1 className="border-b border-rails-border-main pb-3 text-3xl font-bold">
+        <h1 className="border-main border-b pb-3 text-3xl font-bold">
           Naoto Kaneko
         </h1>
         <article
@@ -34,9 +34,7 @@ export default function Home() {
         />
       </Container>
       <nav className="col-span-10 col-start-2 space-y-3 pt-6 md:col-span-2 md:col-start-10">
-        <h2 className="border-b border-rails-border-main pb-1 font-bold">
-          Links
-        </h2>
+        <h2 className="border-main border-b pb-1 font-bold">Links</h2>
         <ul className="flex flex-row space-x-2 md:flex-col md:space-x-0">
           <li>
             <Link href="/posts" className="text-sm">

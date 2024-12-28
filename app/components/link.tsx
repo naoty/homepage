@@ -8,7 +8,7 @@ export default function Link(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
   const isLoading =
     navigation.state !== "idle" && navigation.location.pathname === props.href;
   const classNames = twMerge(
-    "text-rails-link underline hover:bg-rails-link hover:text-white hover:no-underline",
+    "text-link underline hover:bg-link hover:text-white hover:no-underline",
     props.className,
   );
 

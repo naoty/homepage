@@ -43,9 +43,7 @@ export const meta = () => {
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
-      <h1 className="border-b border-rails-border-main pb-3 text-3xl font-bold">
-        Posts
-      </h1>
+      <h1 className="border-main border-b pb-3 text-3xl font-bold">Posts</h1>
       <ul className="list-disc pl-6">
         {loaderData.attributes.map((attribute) => (
           <li key={attribute.id}>

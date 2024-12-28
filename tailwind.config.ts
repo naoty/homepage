@@ -7,18 +7,17 @@ export default {
       borderWidth: {
         3: "3px",
       },
-      colors: {
-        rails: {
-          background: "#f0f0f0",
-          border: {
-            main: "#aaa",
-            content: "#aaa",
-          },
-          link: "#03c",
-          text: {
-            sub: "#888",
-          },
-        },
+      backgroundColor: {
+        main: "#f0f0f0",
+        link: "#03c",
+      },
+      borderColor: {
+        main: "#aaa",
+        content: "#aaa",
+      },
+      textColor: {
+        link: "#03c",
+        sub: "#888",
       },
       fontFamily: {
         sans: ["Verdana", "Meiryo", "sans-serif"],

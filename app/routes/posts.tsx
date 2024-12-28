@@ -9,9 +9,7 @@ export default function Posts() {
         <Outlet />
       </Container>
       <nav className="col-span-10 col-start-2 space-y-3 pt-6 md:col-span-2">
-        <h2 className="border-b border-rails-border-main pb-1 font-bold">
-          Links
-        </h2>
+        <h2 className="border-main border-b pb-1 font-bold">Links</h2>
         <ul className="flex flex-row space-x-2 md:flex-col md:space-x-0">
           <li>
             <Link href="/" className="text-sm">
