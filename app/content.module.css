@@ -29,8 +29,15 @@
   }
 
   ul, ol {
-    list-style: disc;
     padding-left: 1.5rem;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
   }
 
   li {
