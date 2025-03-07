@@ -11,7 +11,8 @@
     "build:app": "react-router build",
     "build:packages": "npm run build --workspaces",
     "start": "wrangler pages dev build/client",
-    "typecheck": "react-router typegen && tsc --noEmit"
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "lint": "eslint"
   },
   "dependencies": {
     "@react-router/node": "^7.1.0",
