@@ -10,7 +10,7 @@
     "build": "npm run build:packages && npm run build:app",
     "build:app": "react-router build",
     "build:packages": "npm run build --workspaces",
-    "start": "wrangler pages dev build/client",
+    "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc --noEmit",
     "lint": "eslint && prettier --check .",
     "lint:fix": "eslint --fix && prettier --write ."
@@ -47,7 +47,6 @@
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.1",
     "vite": "^6.2.0",
-    "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^3.99.0"
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
