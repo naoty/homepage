@@ -12,7 +12,8 @@
     "build:packages": "npm run build --workspaces",
     "start": "wrangler pages dev build/client",
     "typecheck": "react-router typegen && tsc --noEmit",
-    "lint": "eslint && prettier --check ."
+    "lint": "eslint && prettier --check .",
+    "lint:fix": "eslint --fix && prettier --write ."
   },
   "dependencies": {
     "@react-router/node": "^7.1.0",
