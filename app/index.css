@@ -1,6 +1,6 @@
-@import 'highlight.js/styles/base16/railscasts.css' layer(base);
+@import "highlight.js/styles/base16/railscasts.css" layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --border-width-3: 3px;

@@ -11,6 +11,6 @@
     "rootDirs": [".", "./.react-router/types"],
     "strict": true,
     "target": "ES2022",
-    "types": ["vite/client"],
+    "types": ["vite/client"]
   }
 }
