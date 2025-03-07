@@ -5,6 +5,9 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
+    ignores: [".react-router", "**/build", "**/dist"],
+  },
+  {
     languageOptions: {
       globals: {
         ...globals.browser,
