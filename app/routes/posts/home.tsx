@@ -42,15 +42,15 @@ export const meta = () => {
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
-    <>
-      <h1 className="border-main border-b pb-3 text-3xl font-bold">Posts</h1>
-      <ul className="list-disc pl-6">
+    <main className="mx-auto max-w-2xl space-y-8">
+      <h1 className="text-3xl font-bold">Posts</h1>
+      <ul className="list-disc space-y-1 pl-6">
         {loaderData.attributes.map((attribute) => (
           <li key={attribute.id}>
             <Link href={`/posts/${attribute.id}`}>{attribute.title}</Link>
           </li>
         ))}
       </ul>
-    </>
+    </main>
   );
 }
