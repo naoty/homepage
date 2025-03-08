@@ -20,11 +20,11 @@
     @apply space-y-8;
 
     h1 {
-      @apply text-2xl font-bold;
+      @apply text-xl font-bold border-b border-border pb-2 mb-4;
     }
 
     h2 {
-      @apply text-xl font-bold;
+      @apply text-lg font-bold mb-4;
     }
 
     p {
@@ -33,6 +33,32 @@
 
     a {
       @apply text-link underline hover:bg-link hover:text-white hover:no-underline;
+    }
+
+    img {
+      @apply mx-auto;
+    }
+
+    ul,
+    ol {
+      @apply list-disc pl-6 space-y-2;
+    }
+
+    li {
+      @apply leading-6;
+    }
+
+    table {
+      @apply border border-border mx-auto;
+    }
+
+    th,
+    td {
+      @apply border border-border px-2 py-1;
+    }
+
+    hr {
+      @apply border border-border;
     }
   }
 }
