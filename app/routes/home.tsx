@@ -1,6 +1,4 @@
-import Container from "~/components/container";
 import Link from "~/components/link";
-import classes from "~/content.module.css";
 import { attributes, html } from "~/pages/home.md";
 
 export const meta = () => {
@@ -23,36 +21,38 @@ export const meta = () => {
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-12 gap-x-6 py-6">
-      <Container className="col-span-10 col-start-2 md:col-span-6 md:col-start-4">
-        <h1 className="border-main border-b pb-3 text-3xl font-bold">
-          Naoto Kaneko
-        </h1>
-        <article
-          className={classes.post}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </Container>
-      <nav className="col-span-10 col-start-2 space-y-3 pt-6 md:col-span-2 md:col-start-10">
-        <h2 className="border-main border-b pb-1 font-bold">Links</h2>
-        <ul className="flex flex-row space-x-2 md:flex-col md:space-x-0">
+    <div className="divide-border flex flex-row divide-x">
+      <div className="bg-primary h-screen flex-1 p-12">
+        <main className="mx-auto max-w-2xl space-y-8">
+          <header>
+            <h1 className="text-3xl font-bold">Naoto Kaneko</h1>
+          </header>
+          <article
+            className="post"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </main>
+      </div>
+      <nav className="bg-secondary h-screen w-3xs space-y-4 px-4 py-12">
+        <h2 className="text-xl">Links</h2>
+        <ul className="space-y-1">
           <li>
-            <Link href="/posts" className="text-sm">
+            <Link className="text-sm" href="/posts">
               Posts
             </Link>
           </li>
           <li>
-            <Link href="https://x.com/naoty_k" className="text-sm">
+            <Link className="text-sm" href="https://x.com/naoty_k">
               X
             </Link>
           </li>
           <li>
-            <Link href="https://github.com/naoty" className="text-sm">
+            <Link className="text-sm" href="https://github.com/naoty">
               GitHub
             </Link>
           </li>
         </ul>
       </nav>
-    </main>
+    </div>
   );
 }
