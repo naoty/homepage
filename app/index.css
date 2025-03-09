@@ -1,21 +1,31 @@
 @import "tailwindcss";
-@import "highlight.js/styles/base16/railscasts.css" layer(base);
+@import "highlight.js/styles/base16/railscasts.css" layer(components);
 
 @theme {
   /* Color */
   --background-color-primary: #ffffff;
+  --background-color-dark-primary: #000000;
   --background-color-secondary: #fafafa;
+  --background-color-dark-secondary: #18181b;
   --background-color-link: #03c;
   --text-color-primary: #11181c;
+  --text-color-dark-primary: #e6e1dc;
   --text-color-link: #03c;
-  --color-border: #e5e7eb; /* --border-color-primary が効かないので代用する */
+  --text-color-dark-link: #849dff;
+  /* --border-color-* が効かないので代用する */
+  --color-border: #e5e7eb;
+  --color-dark-border: #282828;
 
   /* Font */
   --font-sans: Verdana, Meiryo, sans-serif;
   --font-mono: Menlo, Consolas, monospace;
 }
 
-@layer components {
+@layer base {
+  * {
+    @apply text-primary dark:text-dark-primary;
+  }
+
   .post {
     @apply space-y-8;
 
@@ -32,7 +42,7 @@
     }
 
     a {
-      @apply text-link underline hover:bg-link hover:text-white hover:no-underline;
+      @apply text-link underline hover:bg-link hover:text-white hover:no-underline dark:text-dark-link;
     }
 
     img {
@@ -46,6 +56,10 @@
 
     li {
       @apply leading-6;
+    }
+
+    pre span {
+      @apply text-dark-primary;
     }
 
     table {

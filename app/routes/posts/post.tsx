@@ -33,7 +33,7 @@ export default function Post({
   return (
     <main className="mx-auto max-w-2xl space-y-8">
       <header className="space-y-1">
-        <h1 className="bg-black text-2xl font-bold text-white">
+        <h1 className="bg-black text-2xl font-bold text-white dark:bg-white dark:text-black">
           {attributes.title}
         </h1>
         <p className="text-sub text-sm">
