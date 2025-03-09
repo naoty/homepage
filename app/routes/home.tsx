@@ -21,8 +21,8 @@ export const meta = () => {
 
 export default function Home() {
   return (
-    <div className="divide-border flex flex-row divide-x">
-      <div className="bg-primary min-h-screen flex-1 p-12">
+    <div className="divide-border flex flex-col divide-y md:flex-row md:divide-x">
+      <div className="bg-primary flex-1 p-4 md:min-h-screen md:p-12">
         <main className="mx-auto max-w-2xl space-y-8">
           <header>
             <h1 className="text-3xl font-bold">Naoto Kaneko</h1>
@@ -33,9 +33,9 @@ export default function Home() {
           />
         </main>
       </div>
-      <nav className="bg-secondary min-h-screen w-3xs space-y-4 px-4 py-12">
+      <nav className="bg-secondary h-full w-full space-y-4 px-4 py-4 md:min-h-screen md:w-3xs md:py-12">
         <h2 className="text-xl">Links</h2>
-        <ul className="space-y-1">
+        <ul className="flex flex-row gap-x-2 md:flex-col md:gap-y-1">
           <li>
             <Link className="text-sm" href="/posts">
               Posts

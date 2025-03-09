@@ -10,7 +10,7 @@ export default function Root() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-main">
+      <body className="bg-secondary">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
