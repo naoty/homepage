@@ -1,7 +1,7 @@
 ---
 title: React RouterにおけるPending UIの実装方針
 time: 2025-02-02 20:32
-tags: ['react']
+tags: ['react', 'react-router']
 ---
 
 React Routerでアプリを作る際にload中のUIやsubmit中のUI（以下まとめてPending UI）を表示する実装にはだいたい2種類ある。

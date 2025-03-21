@@ -1,7 +1,7 @@
 ---
 title: Full Stack Web Development with Remix
 time: 2024-08-25 17:00
-tags: ['book', 'remix']
+tags: ['book', 'react-router']
 ---
 
 普段あんまりWebフロントエンドのアプリケーションを開発する機会がないので、年に1回くらいキャッチアップする時間を作っているのだけど、今年はRemixをやってみることにした。とりあえず公式のチュートリアルを一通りやってみたあとに、何か一冊技術書を読みたいなと探していたところ、[Full Stack Web Development with Remix](https://www.packtpub.com/en-us/product/full-stack-web-development-with-remix-9781801075299)という本を見つけたので、夏休みの宿題としてやってみることにした。

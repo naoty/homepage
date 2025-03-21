@@ -1,7 +1,7 @@
 ---
 title: RemixからFirebase Authenticationで認証する
 time: 2024-09-21 12:29
-tags: ['remix', 'firebase']
+tags: ['react-router', 'firebase']
 ---
 
 RemixからFirebase Authenticationを使って認証する実装をしていたのだけど、少しフローが複雑でドキュメントを読んでも理解に時間がかかったので、ブログに整理しておく。

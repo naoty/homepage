@@ -1,7 +1,7 @@
 ---
 title: ブログをReact Router v7で作り直した
 time: 2024-10-14 18:00
-tags: ['meta', 'remix']
+tags: ['meta', 'react-router']
 ---
 
 11ヶ月ぶりにホームページおよびブログを作り直した。今回でv7となる。Next.jsで作ったv6は短命だった。
