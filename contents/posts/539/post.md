@@ -81,3 +81,14 @@ $ flutter doctor # Android Studioのセットアップが完了したことを�
 - 各言語のバージョンマネージャーを使うのは面倒なので今回からasdfを使ってみた。すごい楽。
 - 1passwordのssh-agentも初めて使ってみた。公式のドキュメント通りにポチポチしていたら動いた。これで安全に秘密鍵を保管できていい感じ。
 - dotfilesやfzf用の関数は何年も変わらずに使い続けている。
+
+---
+
+# 追記: 2025-03-31
+asdfがv0.16.0からGoによる実装に代わり、インストール方法も変更されたため追記しておく。
+
+```bash
+$ wget https://github.com/asdf-vm/asdf/releases/download/v0.16.7/asdf-v0.16.7-linux-amd64.tar.gz
+$ tar -xf asdf-v0.16.7-linux-amd64.tar.gz
+$ mv asdf $HOME/bin/
+```
