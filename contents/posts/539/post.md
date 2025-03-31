@@ -91,4 +91,5 @@ asdfがv0.16.0からGoによる実装に代わり、インストール方法も�
 $ wget https://github.com/asdf-vm/asdf/releases/download/v0.16.7/asdf-v0.16.7-linux-amd64.tar.gz
 $ tar -xf asdf-v0.16.7-linux-amd64.tar.gz
 $ mv asdf $HOME/bin/
+$ echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' > ~/.zshrc.local
 ```
