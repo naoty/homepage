@@ -25,32 +25,34 @@ $ git config --global core.sshCommand ssh.exe
 $ ssh.exe -T git@github.com # ウィンドウが出るので承認する
 
 # asdfのインストール
-$ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-$ echo "source $HOME/.asdf/asdf.sh" > ~/.zshrc.local
+$ wget https://github.com/asdf-vm/asdf/releases/download/v0.16.7/asdf-v0.16.7-linux-amd64.tar.gz
+$ tar -xf asdf-v0.16.7-linux-amd64.tar.gz
+$ mv asdf $HOME/bin/
+$ echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' > ~/.zshrc.local
 
 # Node.jsのインストール
 $ sudo apt install -y dirmngr gpg curl gawk
 $ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 $ asdf install nodejs latest
-$ asdf global nodejs latest
+$ asdf set nodejs latest
 
 # Rubyのインストール
 $ sudo apt install -y autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
 $ asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 $ asdf install ruby latest
-$ asdf global ruby latest
+$ asdf set ruby latest
 
 # DartとFlutterのインストール
 $ sudo apt install -y jq
 $ asdf plugin add flutter
 $ asdf install flutter latest
-$ asdf global flutter latest
+$ asdf set flutter latest
 
 # ghqのインストール
 $ sudo apt install -y unzip
 $ asdf plugin add ghq
 $ asdf install ghq latest
-$ asdf global ghq latest
+$ asdf set ghq latest
 $ git config --global ghq.root "/home/naoty/repos"
 
 # dotfiles
@@ -85,11 +87,4 @@ $ flutter doctor # Android Studioのセットアップが完了したことを�
 ---
 
 # 追記: 2025-03-31
-asdfがv0.16.0からGoによる実装に代わり、インストール方法も変更されたため追記しておく。
-
-```bash
-$ wget https://github.com/asdf-vm/asdf/releases/download/v0.16.7/asdf-v0.16.7-linux-amd64.tar.gz
-$ tar -xf asdf-v0.16.7-linux-amd64.tar.gz
-$ mv asdf $HOME/bin/
-$ echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' > ~/.zshrc.local
-```
+asdfがv0.16.0からGoによる実装に代わり、インストール方法やCLIが一部変更されたため、手順を更新した。
