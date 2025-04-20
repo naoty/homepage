@@ -58,6 +58,11 @@
       @apply leading-6;
     }
 
+    li > ul,
+    li > ol {
+      @apply mt-2;
+    }
+
     pre span {
       @apply text-dark-primary;
     }
