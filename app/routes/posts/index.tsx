@@ -1,11 +1,16 @@
+import clsx from "clsx";
 import * as path from "path";
 import Link from "~/components/link";
 import { Route } from "./+types";
 
-export function loader() {
+export function loader({ request }: Route.LoaderArgs) {
+  const searchParams = new URL(request.url).searchParams;
+  const selectedTags = searchParams.getAll("tag");
+
   const posts = import.meta.glob<Post>("../../../contents/posts/**/*.md", {
     eager: true,
   });
+
   const attributes: PostAttribute[] = Object.keys(posts)
     .map((postPath) => {
       const dir = path.dirname(postPath);
@@ -15,26 +20,37 @@ export function loader() {
     })
     .sort((a, b) => b.id - a.id);
 
-  const attributesByYear = attributes.reduce<Map<number, PostAttribute[]>>(
-    (result, attribute) => {
-      const timestamp = Date.parse(attribute.time);
-      const year = new Date(timestamp).getFullYear();
+  const filteredAttributes =
+    selectedTags.length === 0
+      ? attributes
+      : attributes
+          .filter(
+            (attribute) =>
+              attribute.tags !== undefined && attribute.tags.length > 0,
+          )
+          .filter((attribute) =>
+            selectedTags.every((tag) => attribute.tags?.includes(tag)),
+          );
 
-      const attributes = result.get(year) ?? [];
-      result.set(year, [...attributes, attribute]);
+  const attributesByYear = filteredAttributes.reduce<
+    Map<number, PostAttribute[]>
+  >((result, attribute) => {
+    const timestamp = Date.parse(attribute.time);
+    const year = new Date(timestamp).getFullYear();
 
-      return result;
-    },
-    new Map(),
-  );
+    const attributes = result.get(year) ?? [];
+    result.set(year, [...attributes, attribute]);
+
+    return result;
+  }, new Map());
 
   const sortedAttributesByYear = Array.from(attributesByYear.entries()).sort(
     (a, b) => b[0] - a[0],
   );
 
   const tagsWithCount = Array.from(
-    attributes
-      .flatMap((attribute) => attribute.tags)
+    filteredAttributes
+      .flatMap((attribute) => attribute.tags ?? [])
       .filter((tag) => tag !== undefined && tag !== "")
       .reduce<Map<string, number>>((result, tag) => {
         const count = result.get(tag) ?? 0;
@@ -44,7 +60,7 @@ export function loader() {
       .entries(),
   ).sort((a, b) => b[1] - a[1]);
 
-  return { sortedAttributesByYear, tagsWithCount };
+  return { sortedAttributesByYear, tagsWithCount, selectedTags };
 }
 
 export const meta = () => {
@@ -71,8 +87,15 @@ export const meta = () => {
 };
 
 export default function Home({
-  loaderData: { sortedAttributesByYear, tagsWithCount },
+  loaderData: { sortedAttributesByYear, tagsWithCount, selectedTags },
 }: Route.ComponentProps) {
+  const buildTagParams = (tag: string) => {
+    const newParam = selectedTags.includes(tag)
+      ? selectedTags.filter((t) => t !== tag)
+      : [...selectedTags, tag];
+    return new URLSearchParams(newParam.map((tag) => ["tag", tag]));
+  };
+
   return (
     <div className="divide-border dark:divide-dark-border flex flex-col divide-y md:flex-row md:divide-x">
       <div className="bg-primary dark:bg-dark-primary flex-1 p-4 md:min-h-screen md:p-12">
@@ -118,7 +141,15 @@ export default function Home({
         <h2 className="text-xl">Tags</h2>
         <div className="flex flex-wrap gap-x-2">
           {tagsWithCount.map(([tag, count]) => (
-            <Link key={tag} href="#" className="text-sm">
+            <Link
+              key={tag}
+              href={`/posts?${buildTagParams(tag).toString()}`}
+              className={clsx(
+                "text-sm",
+                selectedTags.includes(tag) &&
+                  "bg-link text-white no-underline dark:text-white",
+              )}
+            >
               {tag}({count})
             </Link>
           ))}
