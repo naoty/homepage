@@ -1,6 +1,6 @@
 import * as path from "path";
 import Link from "~/components/link";
-import { Route } from "./+types/home";
+import { Route } from "./+types";
 
 export function loader() {
   const posts = import.meta.glob<Post>("../../../contents/posts/**/*.md", {
@@ -60,24 +60,47 @@ export const meta = () => {
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
-    <main className="mx-auto max-w-2xl space-y-8">
-      <h1 className="text-3xl font-bold">Posts</h1>
-      <div className="space-y-4">
-        {loaderData.sortedAttributesByYear.map(([year, attributes]) => (
-          <section key={year} className="space-y-2">
-            <h2 className="border-border border-b text-lg">{year}</h2>
-            <ul className="space-y-1 pl-6">
-              {attributes.map((attribute) => (
-                <li key={attribute.id} className="list-disc">
-                  <Link href={`/posts/${attribute.id}`} className="text-link">
-                    {attribute.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
+    <div className="divide-border dark:divide-dark-border flex flex-col divide-y md:flex-row md:divide-x">
+      <div className="bg-primary dark:bg-dark-primary flex-1 p-4 md:min-h-screen md:p-12">
+        <main className="mx-auto max-w-2xl space-y-8">
+          <h1 className="text-3xl font-bold">Posts</h1>
+          <div className="space-y-4">
+            {loaderData.sortedAttributesByYear.map(([year, attributes]) => (
+              <section key={year} className="space-y-2">
+                <h2 className="border-border border-b text-lg">{year}</h2>
+                <ul className="space-y-1 pl-6">
+                  {attributes.map((attribute) => (
+                    <li key={attribute.id} className="list-disc">
+                      <Link
+                        href={`/posts/${attribute.id}`}
+                        className="text-link"
+                      >
+                        {attribute.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        </main>
       </div>
-    </main>
+
+      <nav className="bg-secondary dark:bg-dark-secondary w-full space-y-4 p-4 md:w-3xs md:min-h-screen md:py-12">
+        <h2 className="text-xl">Links</h2>
+        <ul className="flex flex-row gap-x-2 md:flex-col md:gap-y-1">
+          <li>
+            <Link href="/" className="text-sm">
+              Top
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts" className="text-sm">
+              Posts
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
