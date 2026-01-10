@@ -17,6 +17,7 @@
   "dependencies": {
     "@react-router/node": "^7.1.0",
     "@react-router/serve": "^7.1.0",
+    "clsx": "^2.1.1",
     "feed": "^4.2.2",
     "glob": "^11.0.0",
     "isbot": "^5",
