@@ -32,7 +32,19 @@ export function loader() {
     (a, b) => b[0] - a[0],
   );
 
-  return { attributes, sortedAttributesByYear };
+  const tagsWithCount = Array.from(
+    attributes
+      .flatMap((attribute) => attribute.tags)
+      .filter((tag) => tag !== undefined && tag !== "")
+      .reduce<Map<string, number>>((result, tag) => {
+        const count = result.get(tag) ?? 0;
+        result.set(tag, count + 1);
+        return result;
+      }, new Map())
+      .entries(),
+  ).sort((a, b) => b[1] - a[1]);
+
+  return { sortedAttributesByYear, tagsWithCount };
 }
 
 export const meta = () => {
@@ -58,14 +70,16 @@ export const meta = () => {
   ];
 };
 
-export default function Home({ loaderData }: Route.ComponentProps) {
+export default function Home({
+  loaderData: { sortedAttributesByYear, tagsWithCount },
+}: Route.ComponentProps) {
   return (
     <div className="divide-border dark:divide-dark-border flex flex-col divide-y md:flex-row md:divide-x">
       <div className="bg-primary dark:bg-dark-primary flex-1 p-4 md:min-h-screen md:p-12">
         <main className="mx-auto max-w-2xl space-y-8">
           <h1 className="text-3xl font-bold">Posts</h1>
           <div className="space-y-4">
-            {loaderData.sortedAttributesByYear.map(([year, attributes]) => (
+            {sortedAttributesByYear.map(([year, attributes]) => (
               <section key={year} className="space-y-2">
                 <h2 className="border-border border-b text-lg">{year}</h2>
                 <ul className="space-y-1 pl-6">
@@ -100,6 +114,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </Link>
           </li>
         </ul>
+
+        <h2 className="text-xl">Tags</h2>
+        <div className="flex flex-wrap gap-x-2">
+          {tagsWithCount.map(([tag, count]) => (
+            <Link key={tag} href="#" className="text-sm">
+              {tag}({count})
+            </Link>
+          ))}
+        </div>
       </nav>
     </div>
   );
