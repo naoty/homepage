@@ -39,9 +39,14 @@ export default function Post({
             <h1 className="bg-black text-2xl font-bold text-white dark:bg-white dark:text-black">
               {attributes.title}
             </h1>
-            <p className="text-sub text-sm">
+            <div className="flex flex-row gap-x-2 text-sm">
               <time dateTime={attributes.time}>{attributes.time}</time>
-            </p>
+              {(attributes.tags ?? []).map((tag) => (
+                <Link key={tag} href={`/posts?tag=${tag}`}>
+                  #{tag}
+                </Link>
+              ))}
+            </div>
           </header>
           <article
             className="post"
