@@ -7,5 +7,5 @@ interface Frontmatter {
   title: string;
   description?: string;
   time: string;
-  tags: string[];
+  tags?: string[];
 }
