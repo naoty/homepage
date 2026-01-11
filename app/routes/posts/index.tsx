@@ -1,12 +1,10 @@
 import clsx from "clsx";
 import * as path from "path";
+import { useSearchParams } from "react-router";
 import Link from "~/components/link";
 import { Route } from "./+types";
 
-export function loader({ request }: Route.LoaderArgs) {
-  const searchParams = new URL(request.url).searchParams;
-  const selectedTags = searchParams.getAll("tag");
-
+export function loader() {
   const posts = import.meta.glob<Post>("../../../contents/posts/**/*.md", {
     eager: true,
   });
@@ -19,6 +17,38 @@ export function loader({ request }: Route.LoaderArgs) {
       return { id, ...attributes };
     })
     .sort((a, b) => b.id - a.id);
+
+  return { attributes };
+}
+
+export const meta = () => {
+  return [
+    { title: "Naoto Kaneko's posts" },
+    {
+      name: "description",
+      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
+    },
+    { property: "og:title", content: "Naoto Kaneko's posts" },
+    {
+      property: "og:description",
+      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
+    },
+    { property: "og:type", content: "blog" },
+    { property: "twitter:card", content: "summary" },
+    { property: "twitter:site", content: "@naoty_k" },
+    { property: "twitter:title", content: "Naoto Kaneko's posts" },
+    {
+      property: "twitter:description",
+      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
+    },
+  ];
+};
+
+export default function Home({
+  loaderData: { attributes },
+}: Route.ComponentProps) {
+  const [searchParams] = useSearchParams();
+  const selectedTags = searchParams.getAll("tag");
 
   const filteredAttributes =
     selectedTags.length === 0
@@ -60,35 +90,6 @@ export function loader({ request }: Route.LoaderArgs) {
       .entries(),
   ).sort((a, b) => b[1] - a[1]);
 
-  return { sortedAttributesByYear, tagsWithCount, selectedTags };
-}
-
-export const meta = () => {
-  return [
-    { title: "Naoto Kaneko's posts" },
-    {
-      name: "description",
-      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
-    },
-    { property: "og:title", content: "Naoto Kaneko's posts" },
-    {
-      property: "og:description",
-      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
-    },
-    { property: "og:type", content: "blog" },
-    { property: "twitter:card", content: "summary" },
-    { property: "twitter:site", content: "@naoty_k" },
-    { property: "twitter:title", content: "Naoto Kaneko's posts" },
-    {
-      property: "twitter:description",
-      content: "Naoto Kanekoが書いたブログ記事の一覧ページです。",
-    },
-  ];
-};
-
-export default function Home({
-  loaderData: { sortedAttributesByYear, tagsWithCount, selectedTags },
-}: Route.ComponentProps) {
   const buildTagParams = (tag: string) => {
     const newParam = selectedTags.includes(tag)
       ? selectedTags.filter((t) => t !== tag)
