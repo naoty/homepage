@@ -59,7 +59,8 @@
     }
 
     li > ul,
-    li > ol {
+    li > ol,
+    li > pre {
       @apply mt-2;
     }
 
